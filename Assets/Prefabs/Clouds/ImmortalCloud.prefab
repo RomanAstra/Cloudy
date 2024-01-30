@@ -377,16 +377,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19056430b124f68b0a220cc00f66167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitPoints: 10
-  _captureSpeed: 1
+  _hitPoints: 15
+  _captureSpeed: 0.4
   _zoneTransform: {fileID: 4962708417762528922}
   _hitPointsText: {fileID: 4024276181866013668}
   _shield: {fileID: 1565816677070712251}
   _shieldTime:
-    Duration: 4
+    Duration: 3
     CurrentTime: 0
   _shieldDelay:
-    Duration: 2
+    Duration: 3
     CurrentTime: 0
   _scaleShieldCoefficient: 1.1
   _shieldBlinkDelay: 0.2

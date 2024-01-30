@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 8134665018647796105}
   _fireDelay:
-    Duration: 0.5
+    Duration: 0.6
     CurrentTime: 0
-  _bulletsCount: 10
+  _bulletsCount: 7
   _inaccuracy: 0.25
 --- !u!212 &8134665018476535288
 SpriteRenderer:
