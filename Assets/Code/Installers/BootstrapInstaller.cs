@@ -24,11 +24,11 @@ namespace Cloudy
             Container.Bind<Player>().FromInstance(_player).AsSingle();
             Container.BindInterfacesTo<InputSystemManager>().AsCached().NonLazy();
             
-            Container.Bind<PistolBulletPool>().AsSingle().WithArguments(_pistolBulletPrefab);
-            Container.Bind<PistolBulletSpawner>().AsSingle().WithArguments(_bulletsContainer);
-            
-            Container.Bind<ShotgunBulletPool>().AsSingle().WithArguments(_shotgunBulletPrefab);
-            Container.Bind<ShotgunBulletSpawner>().AsSingle().WithArguments(_bulletsContainer);
+            // Container.Bind<PistolBulletPool>().AsSingle().WithArguments(_pistolBulletPrefab);
+            // Container.Bind<PistolBulletSpawner>().AsSingle().WithArguments(_bulletsContainer);
+            //
+            // Container.Bind<ShotgunBulletPool>().AsSingle().WithArguments(_shotgunBulletPrefab);
+            // Container.Bind<ShotgunBulletSpawner>().AsSingle().WithArguments(_bulletsContainer);
 
             Container.BindInterfacesTo<WeaponSystem>().AsSingle().WithArguments(_weapons);
         }

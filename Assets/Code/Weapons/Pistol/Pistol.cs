@@ -4,10 +4,10 @@ namespace Cloudy
 {
     public sealed class Pistol : Weapon
     {
-        [Inject]
-        public void Construct(PistolBulletSpawner bulletSpawner)
-        {
-            base.Construct(bulletSpawner);
-        }
+        // [Inject]
+        // public void Construct(PistolBulletSpawner bulletSpawner)
+        // {
+        //     base.Construct(bulletSpawner);
+        // }
     }
 }

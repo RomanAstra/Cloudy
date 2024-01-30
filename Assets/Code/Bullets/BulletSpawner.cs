@@ -5,10 +5,10 @@ namespace Cloudy
 {
     public abstract class BulletSpawner
     {
-        private readonly IBulletPool<Bullet> _pool;
+        private readonly Pool<Bullet> _pool;
         private readonly Transform _parent;
 
-        protected BulletSpawner(IBulletPool<Bullet> pool, Transform parent)
+        protected BulletSpawner(Pool<Bullet> pool, Transform parent)
         {
             _pool = pool;
             _parent = parent;

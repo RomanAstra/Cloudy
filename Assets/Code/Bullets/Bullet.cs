@@ -14,7 +14,7 @@ namespace Cloudy
         [SerializeField] private Countdown _lifeTime;
         [SerializeField] private Rigidbody _rigidbody;
 
-        private IBulletPool<Bullet> _pool;
+        private Pool<Bullet> _pool;
         private Vector3 _moveDirection;
         private int _currentRicochetCount;
         private int _currentTargetCount;
@@ -59,7 +59,7 @@ namespace Cloudy
             _lifeTime.Reset();
         }
 
-        public void SetPool(IBulletPool<Bullet> pool)
+        public void SetPool(Pool<Bullet> pool)
         {
             _pool = pool;
         }

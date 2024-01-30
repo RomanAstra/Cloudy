@@ -8,11 +8,11 @@ namespace Cloudy
         [SerializeField] private int _bulletsCount = 10;
         [SerializeField] private float _inaccuracy = 10f;
         
-        [Inject]
-        public void Construct(ShotgunBulletSpawner bulletSpawner)
-        {
-            base.Construct(bulletSpawner);
-        }
+        // [Inject]
+        // public void Construct(ShotgunBulletSpawner bulletSpawner)
+        // {
+        //     base.Construct(bulletSpawner);
+        // }
         public override void Fire()
         {
             if(!_fireDelay.IsEnded)
@@ -23,7 +23,10 @@ namespace Cloudy
             {
                 var position = _firePoint.position + new Vector3(Random.Range(-_inaccuracy, _inaccuracy), Random.Range(-_inaccuracy, _inaccuracy));
                 var direction = _firePoint.right + new Vector3(0f, Random.Range(-_inaccuracy, _inaccuracy), 0f);
-                _bulletSpawner.Spawn(position, _firePoint.rotation, direction);
+                //_bulletSpawner.Spawn(position, _firePoint.rotation, direction);
+                var bullet = _pool.Get(position, _firePoint.rotation);
+                bullet.Move(direction);
+                bullet.SetPool(_pool);
             }
         }
     }
