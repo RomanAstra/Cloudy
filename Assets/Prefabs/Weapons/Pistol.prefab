@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1733300014150442864}
-  - component: {fileID: 1038320162379208925}
+  - component: {fileID: 2249615920741674635}
   - component: {fileID: 1733300014150442866}
   m_Layer: 0
   m_Name: Pistol
@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1733300014150442864
 Transform:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1038320162379208925
+--- !u!114 &2249615920741674635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,14 +74,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1733300014150442871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ef1f151e894d4488b49301b0eff0bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fee1f974faf7f34d87cb845c82e37bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 971771923531808299, guid: 936c14239182ca548b477317d33ffbdb, type: 3}
+  _bulletPrefab: {fileID: 5824330711618208039, guid: 936c14239182ca548b477317d33ffbdb, type: 3}
   _firePoint: {fileID: 1733300014052449027}
   _fireDelay:
     Duration: 0.2
-    CurrentTime: 0
+    CurrentTime: 0.2
 --- !u!212 &1733300014150442866
 SpriteRenderer:
   m_ObjectHideFlags: 0

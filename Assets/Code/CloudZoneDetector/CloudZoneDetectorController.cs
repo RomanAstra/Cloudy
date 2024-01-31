@@ -7,17 +7,38 @@ public class CloudZoneDetectorController : MonoBehaviour
     [SerializeField] private float _step = 0.5f;
     [SerializeField] private CloudZoneDetector _CloudZoneDetectorPrefab;
 
-    private CloudZoneDetector[] _points;
+    private CloudZoneDetector[] _detectors;
+    private int _detectionCount;
     
     private void Awake()
     {
-        _points = GetComponentsInChildren<CloudZoneDetector>();
+        _detectors = GetComponentsInChildren<CloudZoneDetector>();
+        foreach (var detector in _detectors)
+        {
+            detector.OnTriggerEnter += OnDetectorTriggerExit;
+            detector.OnTriggerExit += OnDetectorTriggerEnter;
+        }
+    }
+    private void OnDestroy()
+    {
+        foreach (var detector in _detectors)
+        {
+            detector.OnTriggerEnter -= OnDetectorTriggerExit;
+            detector.OnTriggerExit -= OnDetectorTriggerEnter;
+        }
+    }
+    private void OnDetectorTriggerExit()
+    {
+        _detectionCount++;
+    }
+    private void OnDetectorTriggerEnter()
+    {
+        _detectionCount--;
     }
 
     public int GetZoneCaptureProgress()
     {
-        var count = _points.Count(p => p.HasDetection);
-        return 100 - count / (_points.Length / 100);
+        return 100 - _detectionCount / (_detectors.Length / 100);
     }
 
 #if UNITY_EDITOR

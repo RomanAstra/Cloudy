@@ -3,14 +3,14 @@ using Utils;
 
 namespace Cloudy
 {
-    public abstract class BulletSpawner
+    public sealed class BulletSpawner
     {
         private readonly Pool<Bullet> _pool;
         private readonly Transform _parent;
 
-        protected BulletSpawner(Pool<Bullet> pool, Transform parent)
+        public BulletSpawner(Bullet bulletPrefab, Transform parent)
         {
-            _pool = pool;
+            _pool = new Pool<Bullet>(bulletPrefab);
             _parent = parent;
         }
 

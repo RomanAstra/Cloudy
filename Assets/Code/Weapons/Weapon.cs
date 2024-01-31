@@ -1,5 +1,4 @@
 using UnityEngine;
-using Utils;
 
 namespace Cloudy
 {
@@ -9,22 +8,16 @@ namespace Cloudy
         [SerializeField] protected Transform _firePoint;
         [SerializeField] protected Countdown _fireDelay;
 
-        //protected BulletSpawner _bulletSpawner;
-        protected Pool<Bullet> _pool;
+        protected BulletSpawner _bulletSpawner;
 
         private void Awake()
         {
-            _pool = new Pool<Bullet>(_bulletPrefab);
+            _bulletSpawner = new BulletSpawner(_bulletPrefab, null);
         }
         private void Update()
         {
             _fireDelay.Update();
         }
-
-        // protected void Construct(BulletSpawner bulletSpawner)
-        // {
-        //     _bulletSpawner = bulletSpawner;
-        // }
         
         public void Show()
         {
@@ -40,10 +33,7 @@ namespace Cloudy
                 return;
 
             _fireDelay.Reset();
-            //_bulletSpawner.Spawn(_firePoint.position, _firePoint.rotation, _firePoint.right);
-            var bullet = _pool.Get(_firePoint.position, _firePoint.rotation);
-            bullet.SetPool(_pool);
-            bullet.Move(_firePoint.right);
+            _bulletSpawner.Spawn(_firePoint.position, _firePoint.rotation, _firePoint.right);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
 namespace Cloudy
@@ -55,7 +54,8 @@ namespace Cloudy
         {
             _tween?.Kill(true);
             _shield.SetActive(true);
-            _tween = _shield.gameObject.transform.DOScale(_scaleShield * _scaleShieldCoefficient, _shieldBlinkDelay).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InQuart);
+            _tween = _shield.gameObject.transform.DOScale(_scaleShield * _scaleShieldCoefficient, _shieldBlinkDelay).
+                SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InQuart);
         }
         private void HideShield()
         {

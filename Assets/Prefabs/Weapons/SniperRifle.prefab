@@ -40,8 +40,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1733300014150442864}
+  - component: {fileID: 1034406096271283052}
   - component: {fileID: 1733300014150442866}
-  - component: {fileID: 2735376462199258397}
   m_Layer: 0
   m_Name: SniperRifle
   m_TagString: Untagged
@@ -65,6 +65,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1034406096271283052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733300014150442871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fee1f974faf7f34d87cb845c82e37bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: -3282940396943287719, guid: 3c6f0e4c736446f4fb2294413274c53a, type: 3}
+  _firePoint: {fileID: 1733300014052449027}
+  _fireDelay:
+    Duration: 0.2
+    CurrentTime: 0.2
 --- !u!212 &1733300014150442866
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117,20 +134,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &2735376462199258397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733300014150442871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ef1f151e894d4488b49301b0eff0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 971771923531808299, guid: 3c6f0e4c736446f4fb2294413274c53a, type: 3}
-  _firePoint: {fileID: 1733300014052449027}
-  _fireDelay:
-    Duration: 0.2
-    CurrentTime: 0

@@ -1,11 +1,12 @@
 using System;
 using JetBrains.Annotations;
+using UnityEngine;
 using Utils;
 
 namespace Cloudy
 {
     [UsedImplicitly]
-    public sealed class WeaponSystem : IInitializer, IDisposable
+    public sealed class WeaponSystem : IDisposable
     {
         private readonly IFireInput _fireInput;
         private readonly IChangeWeaponInput _changeWeapon;
@@ -20,15 +21,13 @@ namespace Cloudy
             
             _fireInput.OnFired += OnFired;
             _changeWeapon.OnChanged += OnWeaponChanged;
+            
+            OnWeaponChanged();
         }
         public void Dispose()
         {
             _fireInput.OnFired -= OnFired;
             _changeWeapon.OnChanged -= OnWeaponChanged;
-        }
-        public void OnStart()
-        {
-            OnWeaponChanged();
         }
 
         private void OnFired()

@@ -5,7 +5,7 @@ using Utils;
 namespace Cloudy
 {
     [RequireComponent(typeof(Collider), typeof(Rigidbody))]
-    public abstract class Bullet : MonoBehaviour
+    public class Bullet : MonoBehaviour
     {
         [SerializeField] private int _damage;
         [SerializeField] private float _speed = 10;
