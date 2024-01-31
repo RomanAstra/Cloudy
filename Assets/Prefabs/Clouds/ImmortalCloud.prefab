@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitPoints: 15
-  _captureSpeed: 0.4
+  _captureSpeed: 0.5
   _zoneTransform: {fileID: 4962708417762528922}
   _hitPointsText: {fileID: 4024276181866013668}
   _shield: {fileID: 1565816677070712251}
@@ -386,7 +386,7 @@ MonoBehaviour:
     Duration: 3
     CurrentTime: 0
   _shieldDelay:
-    Duration: 3
+    Duration: 2
     CurrentTime: 0
   _scaleShieldCoefficient: 1.1
   _shieldBlinkDelay: 0.2

@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitPoints: 15
-  _captureSpeed: 1
+  _captureSpeed: 1.3
   _zoneTransform: {fileID: 4962708417762528922}
   _hitPointsText: {fileID: 4024276181866013668}
 --- !u!1 &7575948537730517995
