@@ -80,8 +80,8 @@ MonoBehaviour:
   _bulletPrefab: {fileID: -3282940396943287719, guid: 3c6f0e4c736446f4fb2294413274c53a, type: 3}
   _firePoint: {fileID: 1733300014052449027}
   _fireDelay:
-    Duration: 0.2
-    CurrentTime: 0.2
+    Duration: 1.2
+    CurrentTime: 0
 --- !u!212 &1733300014150442866
 SpriteRenderer:
   m_ObjectHideFlags: 0

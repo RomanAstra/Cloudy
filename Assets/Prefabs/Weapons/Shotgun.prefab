@@ -51,7 +51,7 @@ MonoBehaviour:
   _fireDelay:
     Duration: 0.6
     CurrentTime: 0
-  _bulletsCount: 7
+  _bulletsCount: 8
   _inaccuracy: 0.25
 --- !u!212 &8134665018476535288
 SpriteRenderer:
