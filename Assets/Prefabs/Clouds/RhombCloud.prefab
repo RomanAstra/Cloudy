@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4962708417762528922}
   - component: {fileID: 3748030394343997089}
-  - component: {fileID: 5721855224398401588}
+  - component: {fileID: 6876101435186692992}
   - component: {fileID: 2707461283338121398}
   m_Layer: 0
   m_Name: Zone
@@ -125,14 +125,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7115501523578560833}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7216657078174557044}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
 --- !u!212 &3748030394343997089
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 1d690df9d8d471944a1eda99e0d0badf, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 576891dad68a9454bb39e187e4e2f164, type: 3}
   m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 0.6784314}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,8 +185,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5721855224398401588
-CircleCollider2D:
+--- !u!61 &6876101435186692992
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -199,8 +199,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!50 &2707461283338121398
 Rigidbody2D:
   serializedVersion: 4

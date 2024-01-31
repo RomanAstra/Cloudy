@@ -45,7 +45,7 @@ namespace Cloudy
             var cloud = _pool.Get(GetRandomPosition(), Quaternion.identity, _transform);
             cloud.SetPool(_pool);
         }
-        private Vector2 GetRandomPosition()
+        private Vector3 GetRandomPosition()
         {
             return _transform.position + new Vector3(Random.Range(-_width, _width), Random.Range(-_height, _height));
         }

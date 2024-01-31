@@ -81,7 +81,7 @@ MonoBehaviour:
   _firePoint: {fileID: 1733300014052449027}
   _fireDelay:
     Duration: 0.2
-    CurrentTime: 0.2
+    CurrentTime: 0
 --- !u!212 &1733300014150442866
 SpriteRenderer:
   m_ObjectHideFlags: 0

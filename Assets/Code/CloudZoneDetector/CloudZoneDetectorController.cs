@@ -15,23 +15,23 @@ public class CloudZoneDetectorController : MonoBehaviour
         _detectors = GetComponentsInChildren<CloudZoneDetector>();
         foreach (var detector in _detectors)
         {
-            detector.OnTriggerEnter += OnDetectorTriggerExit;
-            detector.OnTriggerExit += OnDetectorTriggerEnter;
+            detector.OnTriggerEnter += OnDetectorTriggerEnter;
+            detector.OnTriggerExit += OnDetectorTriggerExit;
         }
     }
     private void OnDestroy()
     {
         foreach (var detector in _detectors)
         {
-            detector.OnTriggerEnter -= OnDetectorTriggerExit;
-            detector.OnTriggerExit -= OnDetectorTriggerEnter;
+            detector.OnTriggerEnter -= OnDetectorTriggerEnter;
+            detector.OnTriggerExit -= OnDetectorTriggerExit;
         }
     }
-    private void OnDetectorTriggerExit()
+    private void OnDetectorTriggerEnter()
     {
         _detectionCount++;
     }
-    private void OnDetectorTriggerEnter()
+    private void OnDetectorTriggerExit()
     {
         _detectionCount--;
     }

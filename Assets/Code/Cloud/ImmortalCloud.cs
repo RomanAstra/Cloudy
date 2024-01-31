@@ -12,12 +12,12 @@ namespace Cloudy
         [SerializeField] private float _scaleShieldCoefficient = 1.1f;
         [SerializeField] private float _shieldBlinkDelay = 0.2f;
 
-        private Vector3 _scaleShield;
+        private Vector3 _shieldScale;
         private Tweener _tween;
 
         private void Awake()
         {
-            _scaleShield = _shield.gameObject.transform.localScale;
+            _shieldScale = _shield.gameObject.transform.localScale;
         }
         protected override void Update()
         {
@@ -54,7 +54,8 @@ namespace Cloudy
         {
             _tween?.Kill(true);
             _shield.SetActive(true);
-            _tween = _shield.gameObject.transform.DOScale(_scaleShield * _scaleShieldCoefficient, _shieldBlinkDelay).
+            _shield.gameObject.transform.localScale = _shieldScale;
+            _tween = _shield.gameObject.transform.DOScale(_shieldScale * _scaleShieldCoefficient, _shieldBlinkDelay).
                 SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InQuart);
         }
         private void HideShield()
