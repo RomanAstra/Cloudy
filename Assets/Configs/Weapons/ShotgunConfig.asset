@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adaa87da1864a5dad634995bb1c65f8, type: 3}
   m_Name: ShotgunConfig
   m_EditorClassIdentifier: 
-  fireDelay: 0
-  bulletsCount: 0
-  inaccuracy: 0
+  fireDelay: 0.6
+  bulletsCount: 8
+  inaccuracy: 0.25

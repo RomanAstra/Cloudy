@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfa560f9a2145dd8c59e482cdd185a7, type: 3}
   m_Name: PistolBulletConfig
   m_EditorClassIdentifier: 
-  damage: 0
-  speed: 0
-  ricochetCount: 0
-  targetCount: 0
-  lifeTime: 0
+  damage: 2
+  speed: 15
+  ricochetCount: 5
+  targetCount: 1
+  lifeTime: 4

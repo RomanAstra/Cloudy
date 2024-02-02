@@ -10,7 +10,7 @@ namespace Cloudy
         
         private void Update()
         {
-            _progressBarImage.fillAmount = _detectorController.GetZoneCaptureProgress() / 100f;
+            _progressBarImage.fillAmount = _detectorController.GetZoneProtectionProgress() / 100f;
         }
     }
 }

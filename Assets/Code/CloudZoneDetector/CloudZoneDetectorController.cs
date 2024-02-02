@@ -36,9 +36,9 @@ public class CloudZoneDetectorController : MonoBehaviour
         _detectionCount--;
     }
 
-    public int GetZoneCaptureProgress()
+    public int GetZoneProtectionProgress()
     {
-        return 100 - _detectionCount / (_detectors.Length / 100);
+        return 100 - (int)(_detectionCount / (_detectors.Length / 100f));
     }
 
 #if UNITY_EDITOR

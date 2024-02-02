@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d83caadb7374e11a0d858cccadc7289, type: 3}
   m_Name: SniperRifleBulletConfig
   m_EditorClassIdentifier: 
-  damage: 0
-  speed: 0
-  ricochetCount: 0
-  targetCount: 0
-  lifeTime: 0
+  damage: 12
+  speed: 20
+  ricochetCount: 1
+  targetCount: 2
+  lifeTime: -1

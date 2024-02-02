@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d8acfc7fe96da7d4c99ae26c5a29d7f6
+  m_SerializeEntries:
+  - m_GUID: a0d4b8ae31d8b65489a6fa531fcf9fd3
+    m_Address: Pistol
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f78a6bebde39f94459bd9366232af67f
+    m_Address: Shotgun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 54165744a5751544894de2ebd6f2d9c5
+    m_Address: SniperRifle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b71a3a321d4418c42b259de4f5bfdaa1
+    m_Address: Location1Level1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b4e3d3283c331504c9fe8be37d231ac4
+    m_Address: Location2Level1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5e3839776bc8b514480487f3aa0554f0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9112593959133cc42978d104aa288d45, type: 2}
+    - {fileID: 11400000, guid: 60184298941d4694a82b05f55c99ba01, type: 2}

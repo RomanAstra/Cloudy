@@ -6,22 +6,29 @@ using Utils;
 namespace Cloudy
 {
     [UsedImplicitly]
-    public sealed class WeaponSystem : IDisposable
+    public sealed class WeaponSystem : IInitializer, IDisposable
     {
         private readonly IFireInput _fireInput;
         private readonly IChangeWeaponInput _changeWeapon;
-        private readonly Weapon[] _weapons;
+        private readonly Transform _container;
+        private readonly WeaponsProvider _weaponsProvider;
+        private Weapon[] _weapons;
         private int _weaponIndex = -1;
 
-        public WeaponSystem(IFireInput fireInput, IChangeWeaponInput changeWeapon, Weapon[] weapons)
+        public WeaponSystem(IFireInput fireInput, IChangeWeaponInput changeWeapon, Transform container)
         {
             _fireInput = fireInput;
             _changeWeapon = changeWeapon;
-            _weapons = weapons;
+            _container = container;
             
             _fireInput.OnFired += OnFired;
             _changeWeapon.OnChanged += OnWeaponChanged;
-            
+
+            _weaponsProvider = new WeaponsProvider();
+        }
+        public async void OnStart()
+        {
+            _weapons = await _weaponsProvider.Load(App.CurrentWeapons, _container);
             OnWeaponChanged();
         }
         public void Dispose()

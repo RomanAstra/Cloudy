@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77179d1fb0747d4882e15060997b5e2, type: 3}
   m_Name: ShotgunBulletConfig
   m_EditorClassIdentifier: 
-  damage: 0
-  speed: 0
+  damage: 2
+  speed: 10
   ricochetCount: 0
-  targetCount: 0
-  lifeTime: 0
+  targetCount: 1
+  lifeTime: 1

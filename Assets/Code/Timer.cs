@@ -1,6 +1,6 @@
-﻿using TMPro;
+﻿using Cloudy.UI;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Cloudy
 {
@@ -9,9 +9,13 @@ namespace Cloudy
         [SerializeField] private Countdown _roundTime = new (60, 60);
         [SerializeField] private TextMeshProUGUI _timerText;
         [SerializeField] private CloudZoneDetectorController _detectorController;
+        [SerializeField] private EndGamePopup _endGamePopup;
         
         private void Update()
         {
+            if(_endGamePopup.gameObject.activeSelf)
+                return;
+            
             _roundTime.Update();
 
             _timerText.text = _roundTime.CurrentTime.ToString("00");
@@ -19,9 +23,9 @@ namespace Cloudy
             if(!_roundTime.IsEnded)
                 return;
 
-            var percent = _detectorController.GetZoneCaptureProgress();
-            Debug.Log($"{percent}% zone protected");
-            SceneManager.LoadScene(0);
+            var percent = _detectorController.GetZoneProtectionProgress();
+            Debug.Log($"Zone protected {percent}");
+            _endGamePopup.Show(percent > 50);
         }
     }
 }
