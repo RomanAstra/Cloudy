@@ -7,8 +7,8 @@ namespace Cloudy.UI.Screens
         protected override void Awake()
         {
             base.Awake();
-            
-            App.Init();
+
+            App.CurrentLevel = 1;
         }
     }
 }

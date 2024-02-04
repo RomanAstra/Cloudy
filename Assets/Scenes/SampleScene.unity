@@ -17372,6 +17372,10 @@ PrefabInstance:
       propertyPath: _detectorController
       value: 
       objectReference: {fileID: 1712141187}
+    - target: {fileID: 6748764372939379742, guid: d410b8b60d22a6a4f8e91f0c4f7b5d56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6748764373216603655, guid: d410b8b60d22a6a4f8e91f0c4f7b5d56, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -33760,6 +33764,7 @@ MonoBehaviour:
   _levels:
   - {fileID: 2421317408312343983, guid: 7982f84a7dc078f49921452d3889794b, type: 3}
   - {fileID: 2297851782042052569, guid: 697d2eff040545e4db0e853b2789ca9b, type: 3}
+  _openWeaponIndex: -1
 --- !u!114 &1781227765
 MonoBehaviour:
   m_ObjectHideFlags: 0

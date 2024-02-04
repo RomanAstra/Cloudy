@@ -39,7 +39,7 @@ namespace Cloudy.UI.Screens
             }
             
             App.CurrentWeapons.Clear();
-            App.CurrentWeapons.AddRange(App.Weapons.OrderBy(s => Random.value).Take(_weaponsCount));
+            App.CurrentWeapons.AddRange(App.Weapons.Take(App.OpenWeaponIndex + 1).OrderBy(w => Random.value).Take(_weaponsCount));
             
             foreach (var weapon in App.CurrentWeapons)
             {

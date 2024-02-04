@@ -43,6 +43,9 @@ namespace Cloudy
         }
         private void OnWeaponChanged()
         {
+            if(_weapons.Length == 0)
+                return;
+            
             if(_weaponIndex >= 0)
                 _weapons[_weaponIndex].Hide();
                 

@@ -1,5 +1,4 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,11 +9,12 @@ namespace Cloudy.UI
     public class EndGamePopup : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _resultGameText;
+        [SerializeField] private TextMeshProUGUI _openedWeaponText;
         [SerializeField] private Button _restartButton;
         [SerializeField] private Button _exitButton;
         [SerializeField] private Button _continurButton;
         [SerializeField] private Image _progressBarImage;
-        
+
         private CloudZoneDetectorController _detectorController;
 
         [Inject]
@@ -22,7 +22,7 @@ namespace Cloudy.UI
         {
             _detectorController = detectorController;
             _detectorController.AllZonesСaptured += OnAllZonesСaptured;
-            
+
             _restartButton.onClick.AddListener(RestartGame);
             _exitButton.onClick.AddListener(ExitGame);
             _continurButton.onClick.AddListener(ContinueGame);
@@ -42,12 +42,19 @@ namespace Cloudy.UI
         public void Show(bool isWin)
         {
             Time.timeScale = 0;
-            
+
             gameObject.SetActive(true);
             _resultGameText.text = isWin ? "Победа" : "Поражение";
-            
+
+            if (isWin && App.IsMaxLevel && App.CurrentLocation == App.OpenWeaponIndex + 1)
+            {
+                App.OpenWeaponIndex++;
+                _openedWeaponText.gameObject.SetActive(true);
+                _openedWeaponText.text = $"Новое оружие {App.Weapons[App.OpenWeaponIndex]}";
+            }
+
             _continurButton.gameObject.SetActive(isWin && !App.IsMaxLevel);
-            
+
             _progressBarImage.fillAmount = _detectorController.GetZoneProtectionProgress() / 100f;
         }
 

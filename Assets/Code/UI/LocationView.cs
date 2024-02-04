@@ -11,13 +11,13 @@ namespace Cloudy.UI
         [SerializeField] private TextMeshProUGUI _title;
         [SerializeField] private Button _chooseLocation;
 
-        public void SetView(string locationName)
+        public void SetView(string locationName, int numberLocation)
         {
             _title.text = locationName;
             
             _chooseLocation.onClick.AddListener(() =>
             {
-                App.CurrentLocation = locationName;
+                App.CurrentLocation = numberLocation;
                 ScreenManager.Show<WeaponsScreen>();
             });
         }

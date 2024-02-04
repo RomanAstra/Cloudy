@@ -11,11 +11,11 @@ namespace Cloudy.UI.Screens
         protected override void Awake()
         {
             base.Awake();
-            
-            foreach (var location in App.Locations)
+
+            for (var i = 0; i < App.Locations.Length; i++)
             {
                 var view = Instantiate(_locationViewPrefab, _parent);
-                view.SetView(location);
+                view.SetView(App.Locations[i], i + 1);
             }
         }
     }

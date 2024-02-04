@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using Utils;
 using Zenject;
@@ -17,12 +18,10 @@ namespace Cloudy
         [SerializeField] private bool _isTest;
         [SerializeField] private GameObject[] _levels;
 
-        [SerializeField] private int _openWeaponIndex;
+        [SerializeField] private int _openWeaponIndex = -1;
         
         public override async void InstallBindings()
         {
-            App.OpenWeaponIndex = _openWeaponIndex;
-            
             Container.Bind<GameManager>().FromInstance(_gameManager).AsSingle();
             Container.Bind<Player>().FromInstance(_player).AsSingle();
             Container.BindInterfacesTo<InputSystemManager>().AsCached().NonLazy();
@@ -30,6 +29,13 @@ namespace Cloudy
             Container.BindInterfacesTo<WeaponSystem>().AsSingle().WithArguments(_weaponsContainer);
 
             Container.Bind<CloudZoneDetectorController>().FromInstance(_detectorController).AsSingle();
+
+            if (_openWeaponIndex >= 0)
+            {
+                App.OpenWeaponIndex = _openWeaponIndex;
+                App.CurrentWeapons.Clear();
+                App.CurrentWeapons.AddRange(App.Weapons.Take(App.OpenWeaponIndex + 1).OrderBy(w => Random.value).Take(3));
+            }
             
             if (_isTest)
             {
