@@ -10,7 +10,7 @@ namespace Extensions
     {
         private readonly HashSet<GameObject> _cachedObjects = new ();
         
-        public async UniTask<T> Load<T>(string assetId, Transform parent = null)
+        public async UniTask<T> InstantiateAsync<T>(string assetId, Transform parent = null)
         {
             var handle = Addressables.InstantiateAsync(assetId, parent);
             var obj = await handle.Task;
@@ -25,7 +25,7 @@ namespace Extensions
         
         public async UniTask<Disposable<T>> LoadDisposable<T>(string assetId, Transform parent = null)
         {
-            var component = await Load<T>(assetId, parent);
+            var component = await InstantiateAsync<T>(assetId, parent);
             return Disposable<T>.Borrow(component, _ => Unload());
         }
 

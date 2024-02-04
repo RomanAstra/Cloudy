@@ -37,6 +37,30 @@ MonoBehaviour:
     m_Address: Location2Level1
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 7c290d762f12ad6469ed7f95051b904e
+    m_Address: Through
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 386461630897b0244a0c5340bdb4c6f4
+    m_Address: Strengthening
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7545f138c69370f48908bda0b1283032
+    m_Address: Location1Level2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9fb816b7fe8e00b45943017953a29b5f
+    m_Address: Freezing
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b950793ec353aac4586bde4631338b22
+    m_Address: Ricochet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5ac01ad39ed82074a8e6ff5ec189a7af
+    m_Address: Location1Level3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5e3839776bc8b514480487f3aa0554f0, type: 2}
   m_SchemaSet:

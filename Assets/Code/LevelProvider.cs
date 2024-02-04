@@ -8,8 +8,7 @@ namespace Cloudy
     {
         public async UniTask<Transform> Load(string levelName)
         {
-            Debug.Log($"Location{App.CurrentLocation}Level{levelName}");
-            return await Load<Transform>($"Location{App.CurrentLocation}Level{levelName}");
+            return await InstantiateAsync<Transform>($"Location{App.CurrentLocation}Level{levelName}");
         }
     }
 }

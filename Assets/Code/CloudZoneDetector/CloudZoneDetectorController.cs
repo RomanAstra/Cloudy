@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class CloudZoneDetectorController : MonoBehaviour
 
     private CloudZoneDetector[] _detectors;
     private int _detectionCount;
+
+    public event Action AllZonesСaptured;
     
     private void Awake()
     {
@@ -30,6 +33,9 @@ public class CloudZoneDetectorController : MonoBehaviour
     private void OnDetectorTriggerEnter()
     {
         _detectionCount++;
+        
+        if(GetZoneProtectionProgress() == 0)
+            AllZonesСaptured?.Invoke();
     }
     private void OnDetectorTriggerExit()
     {

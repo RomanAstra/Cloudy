@@ -28,7 +28,7 @@ namespace Cloudy
         }
         public async void OnStart()
         {
-            _weapons = await _weaponsProvider.Load(App.CurrentWeapons, _container);
+            _weapons = await _weaponsProvider.InstantiateAsync(App.CurrentWeapons, _container);
             OnWeaponChanged();
         }
         public void Dispose()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utils;
 
 namespace Cloudy
@@ -12,9 +13,21 @@ namespace Cloudy
 
         private Pool<Cloud> _pool;
         private int _currentHitPoints;
-
+        private readonly Countdown _frozenTime = new ();
+        private bool _isFrozen;
+        
         protected virtual void Update()
         {
+            if (_isFrozen)
+            {
+                _frozenTime.Update();
+
+                if (_frozenTime.IsEnded)
+                    _isFrozen = false;
+                
+                return;
+            }
+            
             _zoneTransform.localScale += new Vector3(_captureSpeed, _captureSpeed) * Time.deltaTime;
         }
         protected virtual void OnEnable()
@@ -22,6 +35,8 @@ namespace Cloudy
             _currentHitPoints = _hitPoints;
             SetHitPoints(_hitPoints.ToString());
             _zoneTransform.localScale = Vector3.zero;
+            _isFrozen = false;
+            _frozenTime.Duration = 0;
         }
 
         public void SetPool(Pool<Cloud> pool)
@@ -39,6 +54,21 @@ namespace Cloudy
                 _pool = null;
             }
         }
+        public void AddHitPoints(int hitPoints)
+        {
+            if(_currentHitPoints == _hitPoints)
+                return;
+
+            _currentHitPoints = Mathf.Min(_currentHitPoints + hitPoints, _hitPoints);
+            SetHitPoints(_currentHitPoints.ToString());
+        }
+        public void SetFrozen(float frozenTime)
+        {
+            _frozenTime.Duration += frozenTime;
+            _frozenTime.Reset();
+            _isFrozen = true;
+        }
+        
         private void SetHitPoints(string hitPoints)
         {
             _hitPointsText.text = hitPoints;

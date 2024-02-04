@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 822251872955062238}
   - component: {fileID: 8427055619109322760}
   - component: {fileID: 1247033706868711349}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,6 +273,10 @@ MonoBehaviour:
   _captureSpeed: 0.7
   _zoneTransform: {fileID: 4962708417762528922}
   _hitPointsText: {fileID: 4024276181866013668}
+  _frozenTime:
+    Duration: 3
+    CurrentTime: 0
+  IsFrozen: 0
 --- !u!1 &7575948537730517995
 GameObject:
   m_ObjectHideFlags: 0

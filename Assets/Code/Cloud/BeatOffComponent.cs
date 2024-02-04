@@ -8,14 +8,13 @@ namespace Cloudy
 {
     public sealed class BeatOffComponent : MonoBehaviour
     {
-        [Header("Shield")]
         [SerializeField] private float _shieldDelay;
 
-        private CancellationToken _cancellationToken;
+        private readonly CancellationTokenSource _cancellationToken = new ();
         
         private void OnCollisionEnter(Collision other)
         {
-            HideShield();
+             HideShield().Forget();
         }
 
         private void ShowShield()
@@ -26,7 +25,12 @@ namespace Cloudy
         {
             gameObject.SetActive(false);
             await Observable.Timer(TimeSpan.FromSeconds(_shieldDelay));
-            ShowShield();
+            if(!_cancellationToken.IsCancellationRequested)
+                ShowShield();
+        }
+        private void OnDestroy()
+        {
+            _cancellationToken.Cancel();
         }
     }
 }

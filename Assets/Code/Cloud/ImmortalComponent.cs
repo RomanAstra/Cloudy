@@ -3,9 +3,8 @@ using UnityEngine;
 
 namespace Cloudy
 {
-    public class ImmortalCloud : Cloud
+    public class ImmortalComponent : MonoBehaviour
     {
-        [Header("Shield")]
         [SerializeField] private GameObject _shield;
         [SerializeField] private Countdown _shieldTime;
         [SerializeField] private Countdown _shieldDelay;
@@ -19,10 +18,8 @@ namespace Cloudy
         {
             _shieldScale = _shield.gameObject.transform.localScale;
         }
-        protected override void Update()
+        private void Update()
         {
-            base.Update();
-            
             _shieldTime.Update();
             
             if(!_shieldTime.IsEnded)
@@ -38,10 +35,8 @@ namespace Cloudy
             _shieldDelay.Reset();
             ShowShield();
         }
-        protected override void OnEnable()
+        private void OnEnable()
         {
-            base.OnEnable();
-            
             _shieldTime.CurrentTime = 0;
             _shieldDelay.CurrentTime = 0;
         }

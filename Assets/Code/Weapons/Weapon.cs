@@ -18,7 +18,7 @@ namespace Cloudy
         {
             _fireDelay.Update();
         }
-        
+
         public void Show()
         {
             gameObject.SetActive(true);

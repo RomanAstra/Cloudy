@@ -16,17 +16,17 @@ TagManager:
   - 
   - 
   - Bullet
+  - ThroughBullet
+  - RicochetBullet
+  - 
+  - 
+  - Cloud
+  - Shield
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Board
+  - Obstacle
   - 
   - 
   - 

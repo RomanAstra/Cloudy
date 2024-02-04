@@ -1,4 +1,5 @@
-﻿using Cloudy.UI;
+﻿using System;
+using Cloudy.UI;
 using TMPro;
 using UnityEngine;
 
@@ -10,7 +11,11 @@ namespace Cloudy
         [SerializeField] private TextMeshProUGUI _timerText;
         [SerializeField] private CloudZoneDetectorController _detectorController;
         [SerializeField] private EndGamePopup _endGamePopup;
-        
+
+        private void Awake()
+        {
+            Time.timeScale = 1;
+        }
         private void Update()
         {
             if(_endGamePopup.gameObject.activeSelf)

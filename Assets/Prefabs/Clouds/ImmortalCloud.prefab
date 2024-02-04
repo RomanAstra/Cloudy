@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2840748816562497579}
   - component: {fileID: 2956073965593048690}
   - component: {fileID: 4552206316504979230}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 822251872955062238}
   - component: {fileID: 5456692449599406703}
   - component: {fileID: 1247033706868711349}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,6 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7216657078174557044}
+  - component: {fileID: 7607314963838953277}
   - component: {fileID: 4109712330595794887}
   m_Layer: 0
   m_Name: ImmortalCloud
@@ -365,6 +366,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7607314963838953277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7216657078174557043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efa44e46a07f3342b8c2b1553553569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitPoints: 15
+  _captureSpeed: 0.5
+  _zoneTransform: {fileID: 4962708417762528922}
+  _hitPointsText: {fileID: 4024276181866013668}
+  _frozenTime:
+    Duration: 3
+    CurrentTime: 0
+  IsFrozen: 0
 --- !u!114 &4109712330595794887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,10 +398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19056430b124f68b0a220cc00f66167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitPoints: 15
-  _captureSpeed: 0.5
-  _zoneTransform: {fileID: 4962708417762528922}
-  _hitPointsText: {fileID: 4024276181866013668}
   _shield: {fileID: 1565816677070712251}
   _shieldTime:
     Duration: 3

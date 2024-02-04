@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7732990730131703909}
   - component: {fileID: 7732990730131703911}
   - component: {fileID: 7732990730131703910}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Obstacle (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 7732990731150125678}
   - component: {fileID: 7732990731150125680}
   - component: {fileID: 7732990731150125681}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 7732990731320225183}
   - component: {fileID: 7732990731320225185}
   - component: {fileID: 7732990731320225184}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Obstacle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a8c91cc19e46e0bdd0f57529b8b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloud: {fileID: 4109712330595794887, guid: e1f83e3108dc85c418a8ab13b31612fc, type: 3}
+  _cloud: {fileID: 7607314963838953277, guid: e1f83e3108dc85c418a8ab13b31612fc, type: 3}
   _sizeZone: {x: 4.04, y: 2.08}
   _spawnDelay:
     Duration: 13
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 7732990731542949849}
   - component: {fileID: 7732990731542949851}
   - component: {fileID: 7732990731542949850}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Obstacle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 7732990731594976810}
   - component: {fileID: 7732990731594976812}
   - component: {fileID: 7732990731594976813}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Obstacle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 7732990731621881373}
   - component: {fileID: 7732990731621881375}
   - component: {fileID: 7732990731621881374}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Obstacle (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 7732990731925521708}
   - component: {fileID: 7732990731925521710}
   - component: {fileID: 7732990731925521709}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Obstacle (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
