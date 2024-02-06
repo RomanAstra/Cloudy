@@ -18,7 +18,7 @@ namespace Cloudy
         }
         private void Update()
         {
-            if(_endGamePopup.gameObject.activeSelf)
+            if(_roundTime.IsEnded)
                 return;
             
             _roundTime.Update();

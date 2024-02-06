@@ -1,4 +1,6 @@
 using System;
+using Cloudy.Configs;
+using Configs.Upgrades;
 using UnityEngine;
 using Utils;
 
@@ -13,12 +15,22 @@ namespace Cloudy
         [SerializeField] private int _targetCount = -1;
         [SerializeField] private Countdown _lifeTime;
         [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private WeaponType _weaponType;
 
         private Pool<Bullet> _pool;
         private Vector3 _moveDirection;
         private int _currentRicochetCount;
         private int _currentTargetCount;
 
+        private void Awake()
+        {
+            _damage += (int)WeaponUpgradeSystem.GetValue(_weaponType, StatType.Damage);
+            _speed += WeaponUpgradeSystem.GetValue(_weaponType, StatType.Speed);
+            _ricochetCount += (int)WeaponUpgradeSystem.GetValue(_weaponType, StatType.Ricochets);
+            _targetCount += (int)WeaponUpgradeSystem.GetValue(_weaponType, StatType.Targets);
+            _lifeTime.Duration += WeaponUpgradeSystem.GetValue(_weaponType, StatType.LifeTime);
+            _lifeTime.Reset();
+        }
         private void Update()
         {
             if (_lifeTime.IsInfinitely)

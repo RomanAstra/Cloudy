@@ -1,10 +1,18 @@
-﻿using UnityEngine;
+﻿using Cloudy.Configs;
+using Configs.Upgrades;
+using UnityEngine;
 
 namespace Cloudy
 {
     public class StrengtheningComponent : MonoBehaviour
     {
         private int _damage;
+        private int _strengthening;
+
+        private void Awake()
+        {
+            _strengthening += (int)WeaponUpgradeSystem.GetValue(WeaponType.Strengthening, StatType.Strengthening);
+        }
 
         private void OnEnable()
         {
@@ -18,6 +26,7 @@ namespace Cloudy
             
             cloud.DealDamage(_damage);
             _damage++;
+            _damage += _strengthening;
         }
     }
 }

@@ -55,6 +55,7 @@ MonoBehaviour:
     Duration: -1
     CurrentTime: 0
   _rigidbody: {fileID: 854328666704815129}
+  _weaponType: 2
 --- !u!54 &854328666704815129
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,12 +1,15 @@
-﻿using TMPro;
+﻿using Cysharp.Threading.Tasks;
+using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
 namespace Cloudy.UI
 {
-    public class EndGamePopup : MonoBehaviour
+    public sealed class EndGamePopup : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _resultGameText;
         [SerializeField] private TextMeshProUGUI _openedWeaponText;
@@ -14,6 +17,7 @@ namespace Cloudy.UI
         [SerializeField] private Button _exitButton;
         [SerializeField] private Button _continurButton;
         [SerializeField] private Image _progressBarImage;
+        [SerializeField] private WeaponsUpgradePopup _weaponsUpgradePopup;
 
         private CloudZoneDetectorController _detectorController;
 
@@ -41,11 +45,9 @@ namespace Cloudy.UI
 
         public void Show(bool isWin)
         {
-            Time.timeScale = 0;
-
             gameObject.SetActive(true);
             _resultGameText.text = isWin ? "Победа" : "Поражение";
-
+            
             if (isWin && App.IsMaxLevel && App.CurrentLocation == App.OpenWeaponIndex + 1)
             {
                 App.OpenWeaponIndex++;
@@ -56,6 +58,15 @@ namespace Cloudy.UI
             _continurButton.gameObject.SetActive(isWin && !App.IsMaxLevel);
 
             _progressBarImage.fillAmount = _detectorController.GetZoneProtectionProgress() / 100f;
+            
+            if(!isWin)
+                WeaponUpgradeSystem.Reset();
+            
+            Time.timeScale = 0;
+        }
+        public void Hide()
+        {
+            gameObject.SetActive(false);
         }
 
         private void RestartGame()
@@ -69,7 +80,8 @@ namespace Cloudy.UI
         private void ContinueGame()
         {
             App.CurrentLevel++;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().path);
+            _weaponsUpgradePopup.Show();
+            Hide();
         }
     }
 }

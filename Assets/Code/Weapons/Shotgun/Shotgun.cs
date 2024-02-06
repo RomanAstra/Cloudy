@@ -1,3 +1,4 @@
+using Cloudy.Configs;
 using UnityEngine;
 
 namespace Cloudy
@@ -6,7 +7,14 @@ namespace Cloudy
     {
         [SerializeField] private int _bulletsCount = 10;
         [SerializeField] private float _inaccuracy = 0.25f;
-        
+
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            _bulletsCount += (int)WeaponUpgradeSystem.GetValue(_weaponType, StatType.Bullets);
+        }
+
         public override void Fire()
         {
             if(!_fireDelay.IsEnded)

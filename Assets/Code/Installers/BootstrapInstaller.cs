@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEngine;
 using Utils;
 using Zenject;
+using Random = UnityEngine.Random;
 
 namespace Cloudy
 {
@@ -29,7 +30,7 @@ namespace Cloudy
             Container.BindInterfacesTo<WeaponSystem>().AsSingle().WithArguments(_weaponsContainer);
 
             Container.Bind<CloudZoneDetectorController>().FromInstance(_detectorController).AsSingle();
-
+            
             if (_openWeaponIndex >= 0)
             {
                 App.OpenWeaponIndex = _openWeaponIndex;

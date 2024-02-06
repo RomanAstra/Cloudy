@@ -1,3 +1,5 @@
+using Cloudy.Configs;
+using Configs.Upgrades;
 using UnityEngine;
 
 namespace Cloudy
@@ -7,12 +9,14 @@ namespace Cloudy
         [SerializeField] private Bullet _bulletPrefab;
         [SerializeField] protected Transform _firePoint;
         [SerializeField] protected Countdown _fireDelay;
+        [SerializeField] protected WeaponType _weaponType;
 
         protected BulletSpawner _bulletSpawner;
-
-        private void Awake()
+        
+        protected virtual void Awake()
         {
             _bulletSpawner = new BulletSpawner(_bulletPrefab, null);
+            _fireDelay.Duration += WeaponUpgradeSystem.GetValue(_weaponType, StatType.Cooldown);
         }
         private void Update()
         {

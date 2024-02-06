@@ -9,6 +9,7 @@ namespace Cloudy.UI
         private void Start()
         {
             ScreenManager.Show<MainScreen>();
+            WeaponUpgradeSystem.Reset();
         }
     }
 }
