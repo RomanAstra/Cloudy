@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: AllWeaponsUpgradeConfig
   m_EditorClassIdentifier: 
   _configs:
+  - {fileID: 11400000, guid: da9690ede8bf48649b4e3a68c4d31f01, type: 2}
   - {fileID: 11400000, guid: b9a73c719cd1d6048be5e34c65f70581, type: 2}
+  - {fileID: 11400000, guid: 4c87d00eb4efb6c43bd8354e525a1afb, type: 2}

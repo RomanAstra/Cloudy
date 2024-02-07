@@ -8,7 +8,7 @@ namespace Cloudy
         public static string[] Locations { get; private set; } = new [] { "1", "2" };
         public static int CurrentLocation { get; set; } = 1;
         public static int CurrentLevel { get; set; } = 1;
-        public static int MaxLevel { get; } = 3;
+        public static int MaxLevel { get; } = 5;
         public static bool IsMaxLevel => CurrentLevel >= MaxLevel;
         public static string[] Weapons { get; private set; } = new [] { "Pistol", "Shotgun", "SniperRifle", "Through", 
             "Strengthening", "Freezing", "Ricochet" };

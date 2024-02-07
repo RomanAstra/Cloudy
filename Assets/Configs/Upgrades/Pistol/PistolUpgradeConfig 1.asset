@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 511e92bcd6b54118ac0e6a2c5ddd1e12, type: 3}
-  m_Name: PistolUpgradeConfig
+  m_Name: PistolUpgradeConfig 1
   m_EditorClassIdentifier: 
   _type: 0
   _configs:
   - {fileID: 11400000, guid: a7d9e065f135013469c19194362e642e, type: 2}
   - {fileID: 11400000, guid: 14bd2ebc57202744abb52621785f400d, type: 2}
   - {fileID: 11400000, guid: 2464c318adaf64d459e49522b03c5bb4, type: 2}
+  - {fileID: 11400000, guid: ffc2df385abd95542b0866c38acbc4bc, type: 2}
+  - {fileID: 11400000, guid: 14bd2ebc57202744abb52621785f400d, type: 2}
+  - {fileID: 11400000, guid: 495c06264945b474ebe2add0d95f3d3a, type: 2}

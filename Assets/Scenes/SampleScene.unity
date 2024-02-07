@@ -33762,8 +33762,10 @@ MonoBehaviour:
   _detectorController: {fileID: 1712141187}
   _isTest: 1
   _levels:
-  - {fileID: 2421317408312343983, guid: 7982f84a7dc078f49921452d3889794b, type: 3}
-  - {fileID: 2297851782042052569, guid: 697d2eff040545e4db0e853b2789ca9b, type: 3}
+  - {fileID: 2421317408312343983, guid: 7aa8861410a44a74eb645588eb1e76cb, type: 3}
+  - {fileID: 2421317408312343983, guid: b71a3a321d4418c42b259de4f5bfdaa1, type: 3}
+  - {fileID: 2421317408312343983, guid: 7545f138c69370f48908bda0b1283032, type: 3}
+  - {fileID: 2421317408312343983, guid: 5ac01ad39ed82074a8e6ff5ec189a7af, type: 3}
   _openWeaponIndex: -1
 --- !u!114 &1781227765
 MonoBehaviour:
