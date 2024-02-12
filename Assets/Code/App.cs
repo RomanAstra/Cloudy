@@ -5,7 +5,7 @@ namespace Cloudy
     public static class App
     {
         public static bool IsInited { get; private set; }
-        public static string[] Locations { get; private set; } = new [] { "1", "2" };
+        public static string[] Locations { get; private set; } = new [] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         public static int CurrentLocation { get; set; } = 1;
         public static int CurrentLevel { get; set; } = 1;
         public static int MaxLevel { get; } = 5;

@@ -32988,7 +32988,7 @@ MonoBehaviour:
   _detectorController: {fileID: 1712141187}
   _isTest: 0
   _levels: []
-  _openWeaponIndex: -1
+  _openWeaponIndex: 7
 --- !u!114 &1781227765
 MonoBehaviour:
   m_ObjectHideFlags: 0

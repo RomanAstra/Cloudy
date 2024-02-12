@@ -48,12 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d697dd1b09677c4eba7417508146496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 2
-  _speed: 10
-  _ricochetCount: 0
-  _targetCount: 1
+  _damage: 5
+  _speed: 7
+  _ricochetCount: 5
+  _targetCount: 4
   _lifeTime:
-    Duration: 4
+    Duration: 7
     CurrentTime: 0
   _rigidbody: {fileID: 7162453257570899649}
   _weaponType: 3

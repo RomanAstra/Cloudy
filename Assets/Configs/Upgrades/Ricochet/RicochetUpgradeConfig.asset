@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511e92bcd6b54118ac0e6a2c5ddd1e12, type: 3}
+  m_Name: RicochetUpgradeConfig
+  m_EditorClassIdentifier: 
+  _type: 4
+  _configs:
+  - {fileID: 11400000, guid: ddd29392427207b44b3b2c041783edf9, type: 2}
+  - {fileID: 11400000, guid: 5192737bc4f0d354092a556e32405696, type: 2}
+  - {fileID: 11400000, guid: 20fa232eded0c9848a7940ffc2a38e21, type: 2}
+  - {fileID: 11400000, guid: 2b367557bb320cd4b9f6aeea3036dd05, type: 2}
+  - {fileID: 11400000, guid: fb6f09bd0d8c4f649924741cb74a3fc5, type: 2}
+  - {fileID: 11400000, guid: 984641aa6929cc549bf48892988dcec7, type: 2}

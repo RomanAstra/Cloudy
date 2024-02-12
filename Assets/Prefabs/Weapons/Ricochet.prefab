@@ -80,7 +80,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 5401742196013932389, guid: 1a4f5c55fd0f3dc4dbed38948267f08d, type: 3}
   _firePoint: {fileID: 1733300014052449027}
   _fireDelay:
-    Duration: 2
+    Duration: 1.5
     CurrentTime: 0
   _weaponType: 4
 --- !u!212 &1733300014150442866

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511e92bcd6b54118ac0e6a2c5ddd1e12, type: 3}
+  m_Name: StrengthUpgradeConfig
+  m_EditorClassIdentifier: 
+  _type: 5
+  _configs:
+  - {fileID: 11400000, guid: 29886b6a37aad084fa31ce24fb960e20, type: 2}
+  - {fileID: 11400000, guid: 118e943930f81314e8ae3f881c0b0ab9, type: 2}
+  - {fileID: 11400000, guid: 6872950a8facbb240b3b44f14a861736, type: 2}
+  - {fileID: 11400000, guid: 2bd8b1775cdf96944a9e14bea2b3a18a, type: 2}
+  - {fileID: 11400000, guid: 666e6ebf9f2328045856e55024c481a7, type: 2}
+  - {fileID: 11400000, guid: f99cdf7ec31f3d9488d49973c49d007b, type: 2}
+  - {fileID: 11400000, guid: 313b7c33cec558146a697153b7d91fdd, type: 2}

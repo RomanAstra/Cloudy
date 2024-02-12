@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511e92bcd6b54118ac0e6a2c5ddd1e12, type: 3}
+  m_Name: FreezingUpgradeConfig
+  m_EditorClassIdentifier: 
+  _type: 3
+  _configs:
+  - {fileID: 11400000, guid: 9ba7122aa69895d4fb99ea401813ef8c, type: 2}
+  - {fileID: 11400000, guid: 7400980d4776355449024cc618f02977, type: 2}
+  - {fileID: 11400000, guid: 4e1c6f47a3ece5d4dbc39d2310419ed7, type: 2}
+  - {fileID: 11400000, guid: 16a58ff7c9a53b64695ca09e511353b7, type: 2}
+  - {fileID: 11400000, guid: 367c2ee3f99ce2b4abe173de2b11b504, type: 2}
+  - {fileID: 11400000, guid: 2df162b7ab6809d4c8be95708a14de94, type: 2}
+  - {fileID: 11400000, guid: 9431b5f735c0533408f91e8e6d8871d8, type: 2}
+  - {fileID: 11400000, guid: 4b364914f1c1078438a4ac8cf6ff789b, type: 2}
