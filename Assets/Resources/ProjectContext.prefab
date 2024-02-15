@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5593345866460173507}
   - component: {fileID: 6118874376728020198}
+  - component: {fileID: -8650392548764670676}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -44,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e6589720da476459dc6dd71624b071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableObjectInstallers:
-  - {fileID: 11400000, guid: 2efa3d2c8f6c581469d762d89509011e, type: 2}
-  _monoInstallers: []
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: -8650392548764670676}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0
@@ -61,3 +62,16 @@ MonoBehaviour:
       _missingHandlerDefaultResponse: 2
       _requireStrictUnsubscribe: 0
       _defaultAsyncTickPriority: 1
+--- !u!114 &-8650392548764670676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072669853076538380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c545c25ae2954fd8b43667c647b8d89b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponsUpgradeConfig: {fileID: 11400000, guid: 86896ee17dafe4340a02f0bd30a542b0, type: 2}

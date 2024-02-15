@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511e92bcd6b54118ac0e6a2c5ddd1e12, type: 3}
   m_Name: RicochetUpgradeConfig
   m_EditorClassIdentifier: 
-  _type: 4
+  _type: Ricochet
   _configs:
   - {fileID: 11400000, guid: ddd29392427207b44b3b2c041783edf9, type: 2}
   - {fileID: 11400000, guid: 5192737bc4f0d354092a556e32405696, type: 2}

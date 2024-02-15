@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511e92bcd6b54118ac0e6a2c5ddd1e12, type: 3}
   m_Name: SniperUpgradeConfig
   m_EditorClassIdentifier: 
-  _type: 2
+  _type: SniperRifle
   _configs:
   - {fileID: 11400000, guid: 69b5d8dcaec12a543b0a35413ae0b3d6, type: 2}
   - {fileID: 11400000, guid: 7567a44a19c7cc0428dc0b3c01f8d315, type: 2}

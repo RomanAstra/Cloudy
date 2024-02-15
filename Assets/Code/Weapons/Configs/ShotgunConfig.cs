@@ -2,10 +2,9 @@
 
 namespace Cloudy.Configs
 {
-    [CreateAssetMenu(fileName = nameof(ShotgunConfig), menuName = "Configs/Weapon/Shotgun")]
+    [CreateAssetMenu(menuName = "Configs/Weapon/Shotgun", fileName = nameof(ShotgunConfig))]
     public sealed class ShotgunConfig : WeaponConfig
     {
-        public int bulletsCount;
-        public float inaccuracy;
+        public int BulletsCount;
     }
 }

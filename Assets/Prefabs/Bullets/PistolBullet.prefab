@@ -44,17 +44,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8583649702752386713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d697dd1b09677c4eba7417508146496, type: 3}
+  m_Script: {fileID: 11500000, guid: d5288ec5509643fb9d75933427574004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 2
-  _speed: 15
-  _ricochetCount: 5
-  _targetCount: 1
-  _lifeTime:
-    Duration: 4
-    CurrentTime: 0
-  _rigidbody: {fileID: 854328666704815129}
+  Rigidbody: {fileID: 854328666704815129}
 --- !u!54 &854328666704815129
 Rigidbody:
   m_ObjectHideFlags: 0

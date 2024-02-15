@@ -6336,7 +6336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &406886377
 Transform:
   m_ObjectHideFlags: 0
@@ -6364,7 +6364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a8c91cc19e46e0bdd0f57529b8b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloud: {fileID: 7216657078174557047, guid: a182484ca1eaf5647a491840c4bdfb4d, type: 3}
+  _cloud: {fileID: 7216657078174557047, guid: 0ecf81a70054ec0418015e87ceba79cd, type: 3}
   _sizeZone: {x: 2.95, y: 4.22}
   _spawnDelay:
     Duration: 10
@@ -14984,7 +14984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &815696142
 Transform:
   m_ObjectHideFlags: 0
@@ -15012,7 +15012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a8c91cc19e46e0bdd0f57529b8b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloud: {fileID: 7216657078174557047, guid: 7adc3dbcd1601de4e84588e6c4456c08, type: 3}
+  _cloud: {fileID: 7216657078174557047, guid: 0ecf81a70054ec0418015e87ceba79cd, type: 3}
   _sizeZone: {x: 3.53, y: 2.08}
   _spawnDelay:
     Duration: 6
@@ -17125,6 +17125,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9008780915222869235, guid: e2ea265e2fac9014995d8b07df0e189c, type: 3}
   m_PrefabInstance: {fileID: 912445817}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &920979032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6748764372277561822, guid: d410b8b60d22a6a4f8e91f0c4f7b5d56, type: 3}
+  m_PrefabInstance: {fileID: 938222760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f01d619ce7d745e895f1b722fcdebd4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &923604326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31532,11 +31543,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a8c91cc19e46e0bdd0f57529b8b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloud: {fileID: 7216657078174557047, guid: d3359d6ec52941e47a3543be6cdd5184, type: 3}
+  _cloud: {fileID: 4109712330595794887, guid: e1f83e3108dc85c418a8ab13b31612fc, type: 3}
   _sizeZone: {x: 3.53, y: 2.08}
   _spawnDelay:
-    Duration: 10
-    CurrentTime: 8
+    Duration: 20
+    CurrentTime: 2
 --- !u!1 &1692854664
 GameObject:
   m_ObjectHideFlags: 0
@@ -33871,6 +33882,8 @@ GameObject:
   - component: {fileID: 1781227764}
   - component: {fileID: 1781227763}
   - component: {fileID: 1781227767}
+  - component: {fileID: 1781227769}
+  - component: {fileID: 1781227768}
   m_Layer: 0
   m_Name: '[SYSTEM]'
   m_TagString: Untagged
@@ -33903,11 +33916,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 1781227763}
+  _timer: {fileID: 920979032}
   _player: {fileID: 1994197772}
-  _weaponsContainer: {fileID: 427820057}
   _detectorController: {fileID: 1712141187}
   _isTest: 1
   _levels: []
+  _openWeaponIndex: -1
+  _weaponsParent: {fileID: 427820057}
 --- !u!114 &1781227765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33923,6 +33938,8 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 1781227764}
+  - {fileID: 1781227769}
+  - {fileID: 1960185859}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -33965,6 +33982,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d4eaeebe3ed40808448cc3f73fd4934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1781227768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781227762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf5beed089c4bfca53fc1ca716d9df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponsParent: {fileID: 427820057}
+--- !u!114 &1781227769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781227762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9b9b8048774be3996b62b2e78a8f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1781480882
@@ -34631,7 +34673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a8c91cc19e46e0bdd0f57529b8b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloud: {fileID: 7607314963838953277, guid: e1f83e3108dc85c418a8ab13b31612fc, type: 3}
+  _cloud: {fileID: 7216657078174557047, guid: 0ecf81a70054ec0418015e87ceba79cd, type: 3}
   _sizeZone: {x: 4.04, y: 2.08}
   _spawnDelay:
     Duration: 13
@@ -37011,6 +37053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960185858}
+  - component: {fileID: 1960185859}
   m_Layer: 0
   m_Name: '[BULLETS]'
   m_TagString: Untagged
@@ -37033,6 +37076,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1960185859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960185857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7110cfd8154fd4a2539c59ef25f46b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 1960185858}
 --- !u!1001 &1964794377
 PrefabInstance:
   m_ObjectHideFlags: 0

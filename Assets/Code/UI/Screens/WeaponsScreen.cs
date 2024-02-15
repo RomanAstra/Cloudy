@@ -33,19 +33,19 @@ namespace Cloudy.UI.Screens
 
         private void RollWeapons()
         {
-            foreach (var weaponView in _weaponViews)
+            for (var i = 0; i < _weaponViews.Count; i++)
             {
-                _pool.Release(weaponView);
+                _pool.Release(_weaponViews[i]);
             }
-            
+
             App.CurrentWeapons.Clear();
             App.CurrentWeapons.AddRange(App.Weapons.Take(App.OpenWeaponIndex + 1).OrderBy(w => Random.value).Take(_weaponsCount));
-            
-            foreach (var weapon in App.CurrentWeapons)
+
+            for (var i = 0; i < App.CurrentWeapons.Count; i++)
             {
                 var view = _pool.Get(Vector3.zero, Quaternion.identity, _parent);
                 _weaponViews.Add(view);
-                view.SetView(weapon);
+                view.SetView(App.CurrentWeapons[i]);
             }
         }
     }

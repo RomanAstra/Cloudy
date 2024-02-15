@@ -1,51 +1,47 @@
-using System.Linq;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Utils;
 using Zenject;
-using Random = UnityEngine.Random;
 
 namespace Cloudy
 {
-    public class BootstrapInstaller : MonoInstaller
+    public sealed class BootstrapInstaller : MonoInstaller
     {
         [SerializeField] private GameManager _gameManager;
+        [SerializeField] private Timer _timer;
 
         [SerializeField] private Player _player;
-        
-        [SerializeField] private Transform _weaponsContainer;
 
         [SerializeField] private CloudZoneDetectorController _detectorController;
-        
-        [SerializeField] private bool _isTest;
-        [SerializeField] private GameObject[] _levels;
 
-        [SerializeField] private int _openWeaponIndex = -1;
-        
-        public override async void InstallBindings()
+        [SerializeField] private Transform _bulletsPurent;
+
+        public override void InstallBindings()
         {
+            InstallBindingsAsync().Forget();
+        }
+
+        private async UniTaskVoid InstallBindingsAsync()
+        {
+            var preload = FindObjectOfType<PreloadAssets>();
+
             Container.Bind<GameManager>().FromInstance(_gameManager).AsSingle();
-            Container.Bind<Player>().FromInstance(_player).AsSingle();
-            Container.BindInterfacesTo<InputSystemManager>().AsCached().NonLazy();
+            
+            var gameInstaller = new GameInstaller();
+            gameInstaller.Binding(Container, _timer, _player, _detectorController, preload.Level);
+            
+            var weaponInstaller = new WeaponsInstaller();
+            weaponInstaller.Binding(Container, _player.WeaponContainer, preload.Weapons);
+            
+            var cloudInstaller = new CloudsInstaller();
+            cloudInstaller.Binding(Container);
 
-            Container.BindInterfacesTo<WeaponSystem>().AsSingle().WithArguments(_weaponsContainer);
-
-            Container.Bind<CloudZoneDetectorController>().FromInstance(_detectorController).AsSingle();
+            var bulletInstaller = new BulletsInstaller(); 
+            bulletInstaller.Binding(Container, _bulletsPurent);
             
-            if (_openWeaponIndex >= 0)
-            {
-                App.OpenWeaponIndex = _openWeaponIndex;
-                App.CurrentWeapons.Clear();
-                App.CurrentWeapons.AddRange(App.Weapons.Take(App.OpenWeaponIndex + 1).OrderBy(w => Random.value).Take(3));
-            }
+            await UniTask.Delay(1000);
             
-            if (_isTest)
-            {
-                if(_levels.Length > 0)
-                    Instantiate(_levels[App.CurrentLevel - 1]);
-                return;
-            }
-            
-            await new LevelProvider().Load(App.CurrentLevel.ToString());
+            _gameManager.SetState(GameState.PLAYING);
         }
     }
 }

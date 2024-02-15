@@ -74,15 +74,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1733300014150442871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fee1f974faf7f34d87cb845c82e37bc, type: 3}
+  m_Script: {fileID: 11500000, guid: a61a760432944e338320cbd42630ad8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: -3282940396943287719, guid: 3c6f0e4c736446f4fb2294413274c53a, type: 3}
-  _firePoint: {fileID: 1733300014052449027}
-  _fireDelay:
-    Duration: 1.2
-    CurrentTime: 0
-  _weaponType: 2
+  FirePoint: {fileID: 1733300014052449027}
 --- !u!212 &1733300014150442866
 SpriteRenderer:
   m_ObjectHideFlags: 0

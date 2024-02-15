@@ -1,22 +1,26 @@
-﻿using System;
-using Cloudy.UI;
+﻿using Cloudy.UI;
 using TMPro;
 using UnityEngine;
+using Utils;
+using Zenject;
 
 namespace Cloudy
 {
-    public sealed class Timer : MonoBehaviour
+    public sealed class Timer : MonoBehaviour, IUpdate
     {
         [SerializeField] private Countdown _roundTime = new (60, 60);
         [SerializeField] private TextMeshProUGUI _timerText;
-        [SerializeField] private CloudZoneDetectorController _detectorController;
         [SerializeField] private EndGamePopup _endGamePopup;
+        
+        private CloudZoneDetectorController _detectorController;
 
-        private void Awake()
+        [Inject]
+        private void Construct(CloudZoneDetectorController detectorController)
         {
-            Time.timeScale = 1;
+            _detectorController = detectorController;
         }
-        private void Update()
+        
+        public void OnUpdate(float deltaTime)
         {
             if(_roundTime.IsEnded)
                 return;

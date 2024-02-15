@@ -2,12 +2,13 @@
 
 namespace Cloudy.Configs
 {
-    public abstract class BulletConfig : ScriptableObject
+    [CreateAssetMenu(menuName = "Configs/Bullets/Bullet", fileName = nameof(BulletConfig))]
+    public class BulletConfig : ScriptableObject
     {
-        public int damage;
-        public float speed;
-        public int ricochetCount;
-        public int targetCount;
-        public float lifeTime;
+        public int Damage = 1;
+        public float Speed = 10f;
+        public int RicochetCount;
+        public int TargetCount;
+        public float LifeTime = 4f;
     }
 }

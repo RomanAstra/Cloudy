@@ -2,8 +2,10 @@
 
 namespace Cloudy.Configs
 {
-    public abstract class WeaponConfig : ScriptableObject
+    [CreateAssetMenu(menuName = "Configs/Weapon/Weapon", fileName = nameof(WeaponConfig))]
+    public class WeaponConfig : ScriptableObject
     {
-        public float fireDelay;
+        public float FireDelay;
+        public float Inaccuracy;
     }
 }

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172a3222cfc15144d8349b81aae60268, type: 3}
   m_Name: SpeedStatConfig 1
   m_EditorClassIdentifier: 
-  Type: 1
-  Value: 1
+  Stats:
+  - Type: 1
+    Value: 1

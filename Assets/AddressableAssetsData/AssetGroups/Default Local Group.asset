@@ -29,24 +29,12 @@ MonoBehaviour:
     m_Address: SniperRifle
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: b71a3a321d4418c42b259de4f5bfdaa1
-    m_Address: Location1Level2
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: b4e3d3283c331504c9fe8be37d231ac4
-    m_Address: Location2Level1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 7c290d762f12ad6469ed7f95051b904e
     m_Address: Through
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 386461630897b0244a0c5340bdb4c6f4
     m_Address: Strengthening
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7545f138c69370f48908bda0b1283032
-    m_Address: Location1Level3
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 9fb816b7fe8e00b45943017953a29b5f
@@ -57,172 +45,220 @@ MonoBehaviour:
     m_Address: Ricochet
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 5ac01ad39ed82074a8e6ff5ec189a7af
-    m_Address: Location1Level4
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7aa8861410a44a74eb645588eb1e76cb
-    m_Address: Location1Level1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 42eca421768128247982b9bc81f7d3cd
-    m_Address: Location1Level5
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 9879319ce494c014e9909d3e968a172b
-    m_Address: Location2Level3
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 2993b8096c7b727458e78bd340cd704e
-    m_Address: Location2Level4
+  - m_GUID: 3e113a03e22ceb6418e09821777227b6
+    m_Address: Location2Level5
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: a4a44c49550bce9458104986753ca048
     m_Address: Location2Level2
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 3e113a03e22ceb6418e09821777227b6
+  - m_GUID: 2993b8096c7b727458e78bd340cd704e
+    m_Address: Location2Level4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9879319ce494c014e9909d3e968a172b
+    m_Address: Location2Level3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b4e3d3283c331504c9fe8be37d231ac4
+    m_Address: Location2Level1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a8c761f488162d04da35560972d795de
+    m_Address: Location1Level4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 42eca421768128247982b9bc81f7d3cd
+    m_Address: Location1Level5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7aa8861410a44a74eb645588eb1e76cb
+    m_Address: Location1Level1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5ac01ad39ed82074a8e6ff5ec189a7af
+    m_Address: Location1Level3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b71a3a321d4418c42b259de4f5bfdaa1
+    m_Address: Location1Level2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 936c14239182ca548b477317d33ffbdb
+    m_Address: PistolBullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b58e766b0e45b6b4db0b544e34ef5ea2
+    m_Address: ShotgunBullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 37fb7fe99b2ed3d4f85b80f9e780b5bb
+    m_Address: ThroughBullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c73b2bcabbae8c842a0842f5c04fcd2a
+    m_Address: StrengtheningBullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1a4f5c55fd0f3dc4dbed38948267f08d
+    m_Address: RicochetBullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3c6f0e4c736446f4fb2294413274c53a
+    m_Address: SniperRifleBullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0ef1bb569a0545c43858f0cc5835b175
+    m_Address: FreezingBullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b0875e2297ceb584da6cf504fc518f4c
+    m_Address: WeaponsConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a182484ca1eaf5647a491840c4bdfb4d
+    m_Address: BeatOff
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e1f83e3108dc85c418a8ab13b31612fc
+    m_Address: Immortal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d3359d6ec52941e47a3543be6cdd5184
+    m_Address: Moving
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 058313e658704ef43bb6f31e7353f507
+    m_Address: Rhomb
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7adc3dbcd1601de4e84588e6c4456c08
+    m_Address: Regenerating
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0ecf81a70054ec0418015e87ceba79cd
+    m_Address: Circle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 08cda26eb20b51343bf8482a6e45fe50
+    m_Address: StrengtheningBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 91bdeb65659260742ab572ad98ec77db
+    m_Address: FreezingBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4bf8e4f903428884fb89f4bcb88fe294
+    m_Address: ThroughBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e86b0b981d8b593499e8d827886d839a
+    m_Address: RicochetBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f13f17ddc171e243b35b02d982ad479
+    m_Address: ShotgunBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6e1001e9867183641ba778ac6433fd4c
+    m_Address: SniperRifleBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 130e6f01144786243ab677886b6192fc
+    m_Address: PistolBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 14cfd6a473cee514a9233bec0905115b
+    m_Address: PistolConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 17001aaa40610844cbc88f20495bfa46
+    m_Address: SniperRifleConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5ab732dab51fd5547946e1467b564250
+    m_Address: FreezingConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aa46ebf32a519ae45958c9454baf46fe
+    m_Address: RicochetConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d3893ed6185a7304192ea35ec1bfc662
+    m_Address: StrengtheningConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 60c0f327bbd5d3a4fa521510fef89f1a
+    m_Address: ThroughConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a08964808341feb49bffebe39c1f9737
+    m_Address: ShotgunConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 98c9bfc62ca71864e9e8de0d39da6c3e
+    m_Address: RhombCloudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 60eb8b1d24a9d14449fc83a19a2e9f50
+    m_Address: CircleCloudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b91f393f37418914a97f721f8d07a72b
+    m_Address: RegeneratingCloudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 247b5076dbb9260448046ee8fff192da
+    m_Address: MovingCloudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9d52026b6478f0140a1a1a62daf019e5
+    m_Address: ImmortalCloudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4a8e0ab3974daf845b145f2e042ff3be
+    m_Address: BeatOffCloudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f3875c1ebab6c6a4b9c0db9ffd50a996
+    m_Address: Location1Level5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b09e4a28668a68a4fb290ed654e72dcd
+    m_Address: Location1Level4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d9a3a65791d594f478cc109a1c5d50c9
+    m_Address: Location1Level3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f351d5b82c058f54b8cffc661605a3e8
+    m_Address: Location1Level2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 55523c2af8956d7459f9efa9f0a598fa
+    m_Address: Location1Level1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f10a5e33aac37f24ca563ad207bbeda2
     m_Address: Location2Level5
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 261dfbf687288974fbc70f6203221050
-    m_Address: Location3Level1
+  - m_GUID: 20d17b03244dd4146a62eba77b9455e0
+    m_Address: Location2Level4
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: b3354310f15945b45a25da49914c2d8a
-    m_Address: Location3Level2
+  - m_GUID: 3b8830300151cbf40abedf61ff870c0e
+    m_Address: Location2Level3
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 959ba8ddd13e17d4fb8fe33d7f59cd8b
-    m_Address: Location3Level3
+  - m_GUID: bf4c10d1b59a4e84688b6998b8b723bc
+    m_Address: Location2Level2
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: f24f6f2c8dec61a408d5cd1f9f87cf40
-    m_Address: Location3Level4
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 3417e66e13bb140428c5b7ea3244048f
-    m_Address: Location3Level5
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7a2126da04c002941b29a20a335f0dd7
-    m_Address: Location4Level1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7aeefd989588d5f40a59c5747a05925e
-    m_Address: Location4Level2
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 832b807e3722b25438dd5468b1c0f826
-    m_Address: Location4Level3
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: f2e07a46b1dced642bdf75144eb22507
-    m_Address: Location4Level4
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 6ad8cb56ad46a16459b25201c0174109
-    m_Address: Location4Level5
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 047398b6180dd8e408d6b3b6d14a8d73
-    m_Address: Location5Level1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a81db5318b5cb474ea4fd551c534ea69
-    m_Address: Location5Level2
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 69bd0026aa4c7464ebc677f925744f16
-    m_Address: Location5Level3
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: c679cb58670d0674496dac34a529caf7
-    m_Address: Location5Level4
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 372e67891f5061b4f8145d049a261767
-    m_Address: Location5Level5
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 644e7ab0247a87a47bb7b948eb9bad8c
-    m_Address: Location6Level1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8af3db60dcb23e448a35f5458dfa1250
-    m_Address: Location6Level2
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 9833d85fa0fdddc42a27239b2f06a135
-    m_Address: Location6Level3
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 44455469e7148884380fa40bf13a4725
-    m_Address: Location6Level4
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8a39895e846c8ea4a83f6ada3c573d6d
-    m_Address: Location6Level5
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: e4b1fd35cfebd3849a55d37128ff5532
-    m_Address: Location7Level1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7b701e2bbc57ba04a8aa904e277321f3
-    m_Address: Location7Level2
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 727c7092195583f419b7177f34c510ab
-    m_Address: Location7Level3
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 2505e07c482cb2148a022387db97b2ea
-    m_Address: Location7Level4
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 4c57cf703b26e5f418fb790f75a8cf43
-    m_Address: Location7Level5
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 93147a66366b48141a4faf1f39e14477
-    m_Address: Location8Level1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: c53e5ac4c0134bf419b6b641ef45f8db
-    m_Address: Location8Level2
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: b4315f9a503703042b499940b62b3471
-    m_Address: Location8Level3
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 5894fa59c87ecf941867a946c240ccc3
-    m_Address: Location8Level4
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7c501afacf5b9a84d9c6f8e2e0b879f1
-    m_Address: Location8Level5
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: c5fb795ce93868b48b57178f8b4d5c1f
-    m_Address: Location9Level1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8fa301b40909e9646bf27b7dc1878b1b
-    m_Address: Location9Level2
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: edd5d7d6350a1854fb551be7744644d7
-    m_Address: Location9Level3
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 86b7f5f600c276c4d921e29990539da6
-    m_Address: Location9Level4
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 0047d653e5d52044f9a9bb8557248505
-    m_Address: Location9Level5
+  - m_GUID: 3306d58fa9d0e314093b572527eefe9b
+    m_Address: Location2Level1
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

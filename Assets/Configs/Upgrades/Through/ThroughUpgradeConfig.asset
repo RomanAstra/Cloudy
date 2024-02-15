@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511e92bcd6b54118ac0e6a2c5ddd1e12, type: 3}
   m_Name: ThroughUpgradeConfig
   m_EditorClassIdentifier: 
-  _type: 6
+  _type: Through
   _configs:
   - {fileID: 11400000, guid: 183f822ec33817c4abce2cfd865c971c, type: 2}
   - {fileID: 11400000, guid: 44b105680f5615643be4d65f702aa1dc, type: 2}

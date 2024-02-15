@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2512267697369871170}
-  - component: {fileID: 5401742196013932389}
   - component: {fileID: 77010047156196639}
   - component: {fileID: 7162453257570899649}
   - component: {fileID: 6830184626241531951}
@@ -36,27 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5401742196013932389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2279443470713392193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d697dd1b09677c4eba7417508146496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 5
-  _speed: 7
-  _ricochetCount: 5
-  _targetCount: 4
-  _lifeTime:
-    Duration: 7
-    CurrentTime: 0
-  _rigidbody: {fileID: 7162453257570899649}
-  _weaponType: 3
 --- !u!114 &77010047156196639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,10 +44,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2279443470713392193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81fde7cdb4244e57bfaf1fdcf6f04f79, type: 3}
+  m_Script: {fileID: 11500000, guid: d5288ec5509643fb9d75933427574004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _freezingTime: 3
+  Rigidbody: {fileID: 7162453257570899649}
 --- !u!54 &7162453257570899649
 Rigidbody:
   m_ObjectHideFlags: 0

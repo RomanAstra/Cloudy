@@ -10,6 +10,7 @@
         LifeTime,
         Bullets,
         FreezingTime,
-        Strengthening
+        Strengthening,
+        Scale
     }
 }

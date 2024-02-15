@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172a3222cfc15144d8349b81aae60268, type: 3}
   m_Name: LifeTimeStatConfig
   m_EditorClassIdentifier: 
-  Type: 5
-  Value: 1
+  Stats:
+  - Type: 5
+    Value: 1

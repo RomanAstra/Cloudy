@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969fb569b66b44cbb314d1f813e6b07c, type: 3}
+  m_Name: Location2Level2
+  m_EditorClassIdentifier: 
+  ZonesSettings:
+  - CloudName: Circle
+    SizeZone: {x: 4, y: 2}
+    SpawnDelay: 13
+    StartSpawnDelay: 6
+  - CloudName: Immortal
+    SizeZone: {x: 4.6, y: 3}
+    SpawnDelay: 19
+    StartSpawnDelay: 7
+  - CloudName: Rhomb
+    SizeZone: {x: 3, y: 2.4}
+    SpawnDelay: 14
+    StartSpawnDelay: 2
+  - CloudName: Immortal
+    SizeZone: {x: 2.5, y: 4}
+    SpawnDelay: 13
+    StartSpawnDelay: 7
+  - CloudName: Circle
+    SizeZone: {x: 2.6, y: 3.4}
+    SpawnDelay: 21
+    StartSpawnDelay: 8

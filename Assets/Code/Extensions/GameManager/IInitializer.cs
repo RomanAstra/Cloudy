@@ -2,6 +2,6 @@
 {
     public interface IInitializer : IController
     {
-        void OnStart();
+        void OnInitialize();
     }
 }

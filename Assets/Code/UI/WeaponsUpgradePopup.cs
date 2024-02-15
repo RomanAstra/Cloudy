@@ -1,4 +1,5 @@
-﻿using Configs.Upgrades.Weapons;
+﻿using System.Text;
+using Configs.Upgrades.Weapons;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -12,12 +13,14 @@ namespace Cloudy.UI
         [SerializeField] private Transform _viewParent;
         [SerializeField] private int _viewCount = 3;
         
-        private AllWeaponsUpgradeConfig _weaponsUpgradeConfig;
+        private WeaponUpgradeProvider _weaponUpgradeProvider;
+        private WeaponUpgradeSystem _weaponUpgradeSystem;
         
         [Inject]
-        public void Construct(AllWeaponsUpgradeConfig weaponsUpgradeConfig)
+        public void Construct(WeaponUpgradeProvider weaponUpgradeProvider, WeaponUpgradeSystem weaponUpgradeSystem)
         {
-            _weaponsUpgradeConfig = weaponsUpgradeConfig;
+            _weaponUpgradeProvider = weaponUpgradeProvider;
+            _weaponUpgradeSystem = weaponUpgradeSystem;
         }
         public void Show()
         {
@@ -26,22 +29,31 @@ namespace Cloudy.UI
             for (var i = 0; i < _viewCount; i++)
             {
                 var weapon = App.CurrentWeapons[Random.Range(0, App.CurrentWeapons.Count)];
-                var configs = _weaponsUpgradeConfig.GetConfig(weapon);
-                if(configs == null)
-                    continue;
+                var config = _weaponUpgradeProvider.GetConfig(weapon);
 
-                var config = configs.GetRandomConfig();
-
-                Debug.Log(config.Type);
+                //todo for test
                 if(config == null)
                     continue;
-
+                
                 var view = Instantiate(_weaponButtonViewPrefab, _viewParent);
-                var text = $"{weapon} {config.Type} {config.Value}";
-                view.Set(text, () =>
+                var sb = new StringBuilder(weapon);
+                
+                for (var j = 0; j < config.Stats.Length; j++)
                 {
-                    configs.Remove(config);
-                    WeaponUpgradeSystem.AddUpgrade(weapon, config.Type, config.Value);
+                    var stat = config.Stats[j];
+                    sb.Append($"\n{stat.Type} = {stat.Value}");
+                }
+                
+                view.Set(sb.ToString(), () =>
+                {
+                    _weaponUpgradeProvider.RemoveConfig(config);
+
+                    for (var i = 0; i < config.Stats.Length; i++)
+                    {
+                        var stat = config.Stats[i];
+                        _weaponUpgradeSystem.AddUpgrade(weapon, stat.Type, stat.Value);
+                    }
+
                     SceneManager.LoadScene(SceneManager.GetActiveScene().path);
                 });
             }

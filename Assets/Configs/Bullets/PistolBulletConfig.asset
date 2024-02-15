@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acfa560f9a2145dd8c59e482cdd185a7, type: 3}
+  m_Script: {fileID: 11500000, guid: e28b46de3ca0475894b1f41606b1bc82, type: 3}
   m_Name: PistolBulletConfig
   m_EditorClassIdentifier: 
-  damage: 2
-  speed: 15
-  ricochetCount: 5
-  targetCount: 1
-  lifeTime: 4
+  Damage: 2
+  Speed: 15
+  RicochetCount: 5
+  TargetCount: 1
+  LifeTime: 4

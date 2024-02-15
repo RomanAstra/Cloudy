@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3681682177476410124}
+  - component: {fileID: 4815356372159994973}
   m_Layer: 0
   m_Name: Location3Level1
   m_TagString: Untagged
@@ -33,6 +34,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4815356372159994973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297851782042052569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3655d047424a0a9cf1baf281cdbb2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cloudSpawnZones:
+  - {fileID: 5955800503049057157}
+  - {fileID: 2650072285887992494}
+  - {fileID: 7291887730991559353}
+  - {fileID: 5226401148765303035}
+  - {fileID: 2263147825881562010}
 --- !u!1 &7283481885912077470
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +61,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7283481885912077471}
-  - component: {fileID: 7283481885912077456}
+  - component: {fileID: 7291887730991559353}
   m_Layer: 0
   m_Name: Zone (2)
   m_TagString: Untagged
@@ -65,7 +84,7 @@ Transform:
   m_Father: {fileID: 7283481886545030385}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7283481885912077456
+--- !u!114 &7291887730991559353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,14 +93,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7283481885912077470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a8c91cc19e46e0bdd0f57529b8b247, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a52997bd28d42ca99dbb16c2f1b6f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloud: {fileID: 7216657078174557047, guid: 058313e658704ef43bb6f31e7353f507, type: 3}
-  _sizeZone: {x: 2.95, y: 2.46}
-  _spawnDelay:
-    Duration: 14
-    CurrentTime: 2
+  CloudName: Immortal
+  SizeZone: {x: 2, y: 2}
+  SpawnDelay: 10
+  StartSpawnDelay: 0
 --- !u!1 &7283481886005729173
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7283481886300136243}
-  - component: {fileID: 7283481886300136244}
+  - component: {fileID: 5955800503049057157}
   m_Layer: 0
   m_Name: Zone
   m_TagString: Untagged
@@ -310,7 +328,7 @@ Transform:
   m_Father: {fileID: 7283481886545030385}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7283481886300136244
+--- !u!114 &5955800503049057157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,14 +337,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7283481886300136242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a8c91cc19e46e0bdd0f57529b8b247, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a52997bd28d42ca99dbb16c2f1b6f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloud: {fileID: 7216657078174557047, guid: 0ecf81a70054ec0418015e87ceba79cd, type: 3}
-  _sizeZone: {x: 4.04, y: 2.08}
-  _spawnDelay:
-    Duration: 13
-    CurrentTime: 6
+  CloudName: Immortal
+  SizeZone: {x: 2, y: 2}
+  SpawnDelay: 10
+  StartSpawnDelay: 0
 --- !u!1 &7283481886415589920
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7283481887236450044}
-  - component: {fileID: 7283481887236450045}
+  - component: {fileID: 2263147825881562010}
   m_Layer: 0
   m_Name: Zone (4)
   m_TagString: Untagged
@@ -924,7 +941,7 @@ Transform:
   m_Father: {fileID: 7283481886545030385}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7283481887236450045
+--- !u!114 &2263147825881562010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -933,14 +950,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7283481887236450043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a8c91cc19e46e0bdd0f57529b8b247, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a52997bd28d42ca99dbb16c2f1b6f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloud: {fileID: 7216657078174557047, guid: 0ecf81a70054ec0418015e87ceba79cd, type: 3}
-  _sizeZone: {x: 2.64, y: 3.42}
-  _spawnDelay:
-    Duration: 21
-    CurrentTime: 8
+  CloudName: Immortal
+  SizeZone: {x: 2, y: 2}
+  SpawnDelay: 10
+  StartSpawnDelay: 0
 --- !u!1 &7283481887424415122
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7283481887424415123}
-  - component: {fileID: 7283481887424415124}
+  - component: {fileID: 5226401148765303035}
   m_Layer: 0
   m_Name: Zone (3)
   m_TagString: Untagged
@@ -973,7 +989,7 @@ Transform:
   m_Father: {fileID: 7283481886545030385}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7283481887424415124
+--- !u!114 &5226401148765303035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -982,14 +998,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7283481887424415122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a8c91cc19e46e0bdd0f57529b8b247, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a52997bd28d42ca99dbb16c2f1b6f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloud: {fileID: 7216657078174557047, guid: 058313e658704ef43bb6f31e7353f507, type: 3}
-  _sizeZone: {x: 2.54, y: 4.14}
-  _spawnDelay:
-    Duration: 13
-    CurrentTime: 7
+  CloudName: BeatOff
+  SizeZone: {x: 2, y: 2}
+  SpawnDelay: 10
+  StartSpawnDelay: 0
 --- !u!1 &7283481887697710233
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7283481887697710234}
-  - component: {fileID: 7283481887697710235}
+  - component: {fileID: 2650072285887992494}
   m_Layer: 0
   m_Name: Zone (1)
   m_TagString: Untagged
@@ -1022,7 +1037,7 @@ Transform:
   m_Father: {fileID: 7283481886545030385}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7283481887697710235
+--- !u!114 &2650072285887992494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1031,14 +1046,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7283481887697710233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a8c91cc19e46e0bdd0f57529b8b247, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a52997bd28d42ca99dbb16c2f1b6f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloud: {fileID: 7216657078174557047, guid: 0ecf81a70054ec0418015e87ceba79cd, type: 3}
-  _sizeZone: {x: 4.64, y: 2.97}
-  _spawnDelay:
-    Duration: 19
-    CurrentTime: 7
+  CloudName: Moving
+  SizeZone: {x: 2, y: 2}
+  SpawnDelay: 10
+  StartSpawnDelay: 0
 --- !u!1 &8621396611809289392
 GameObject:
   m_ObjectHideFlags: 0

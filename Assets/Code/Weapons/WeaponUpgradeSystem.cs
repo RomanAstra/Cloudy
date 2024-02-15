@@ -1,28 +1,26 @@
 ﻿using System.Collections.Generic;
 using Cloudy.Configs;
-using Configs.Upgrades;
 
 namespace Cloudy
 {
     public sealed class WeaponUpgradeSystem
     {
-        private static readonly Dictionary<string, UpgradeWeapon> _configs = new ();
+        private readonly Dictionary<string, UpgradeWeapon> _configs = new ();
 
-        public static void AddUpgrade(string weaponType, StatType statType, float value)
+        public void AddUpgrade(string weaponType, StatType statType, float value)
         {
             _configs.TryAdd(weaponType, new UpgradeWeapon());
 
             _configs[weaponType].AddValue(statType, value);
         }
-        public static float GetValue(WeaponType weaponType, StatType statType)
+        public float GetValue(string weaponType, StatType statType)
         {
-            var type = weaponType.ToString();
-            if (!_configs.ContainsKey(type))
+            if (!_configs.ContainsKey(weaponType))
                 return 0f;
 
-            return _configs[type].GetValue(statType);
+            return _configs[weaponType].GetValue(statType);
         }
-        public static void Reset()
+        public void Reset()
         {
             _configs.Clear();
         }

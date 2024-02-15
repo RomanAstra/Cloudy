@@ -9,19 +9,11 @@ namespace Configs.Upgrades.Weapons
     {
         [SerializeField] private WeaponUpgradeConfig[] _configs;
 
-        private Dictionary<string, WeaponUpgradeConfig> _configsMap;
+        public IReadOnlyDictionary<string, WeaponUpgradeConfig> ConfigsMap;
 
         private void OnValidate()
         {
-            _configsMap = _configs.ToDictionary(config => config.Type.ToString());
+            ConfigsMap = _configs.ToDictionary(config => config.Type.ToString());
         }
-
-        public WeaponUpgradeConfig GetConfig(string type)
-        {
-            if (!_configsMap.ContainsKey(type))
-                return default;
-            
-            return _configsMap[type];
-        } 
     }
 }
