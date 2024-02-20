@@ -66,11 +66,13 @@ namespace Cloudy.Adapter
             _hierarchy.Shield.gameObject.SetActive(true);
             _tween = _hierarchy.Shield.DOFade(_config.ShieldAlpha, _config.ShieldBlinkDelay).
                 SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InExpo);
+            _hierarchy.Collider.enabled = false;
         }
         private void HideShield()
         {
             _tween?.Kill(true);
             _hierarchy.Shield.gameObject.SetActive(false);
+            _hierarchy.Collider.enabled = true;
         }
     }
 }

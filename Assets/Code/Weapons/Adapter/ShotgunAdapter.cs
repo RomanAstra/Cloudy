@@ -20,12 +20,14 @@ namespace Cloudy
         {
             if(!_fireDelay.IsEnded)
                 return;
-            
+
             _fireDelay.Reset();
             for (var i = 0; i < _bulletsCount; i++)
             {
                 SpawnBullet();
             }
+
+            Recoil();
         }
     }
 }

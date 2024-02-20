@@ -379,6 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ZoneTransform: {fileID: 4962708417762528922}
   HitPointsText: {fileID: 4024276181866013668}
+  Collider: {fileID: 5456692449599406703}
   Shield: {fileID: 2956073965593048690}
 --- !u!1 &7575948537730517995
 GameObject:

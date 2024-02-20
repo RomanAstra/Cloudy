@@ -12,7 +12,7 @@ namespace Cloudy.Adapter
         {
             _hierarchy = hierarchy;
             _hierarchy.ShieldComponent.onCollisionEnter += OnCollisionEnter;
-            
+
             _shieldDelay.Duration = config.ShieldDelay;
         }
         public override void OnUpdate(float deltaTime)
@@ -31,11 +31,13 @@ namespace Cloudy.Adapter
         private void OnCollisionEnter()
         {
             _hierarchy.ShieldComponent.gameObject.SetActive(false);
+            _hierarchy.Collider.enabled = true;
             _shieldDelay.Reset();
         }
         private void ShowShield()
         {
             _hierarchy.ShieldComponent.gameObject.SetActive(true);
+            _hierarchy.Collider.enabled = false;
         }
         protected override void Release()
         {

@@ -12,6 +12,5 @@ namespace Cloudy
         public static string[] Weapons { get; private set; } = new [] { "Pistol", "Shotgun", "SniperRifle", "Through", 
             "Strengthening", "Freezing", "Ricochet" };
         public static List<string> CurrentWeapons { get; private set; } = new () { "Pistol", "Shotgun", "SniperRifle" };
-        public static int OpenWeaponIndex { get; set; } = 2;
     }
 }

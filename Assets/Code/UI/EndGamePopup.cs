@@ -18,6 +18,7 @@ namespace Cloudy.UI
         [SerializeField] private Image _progressBarImage;
         [SerializeField] private WeaponsUpgradePopup _weaponsUpgradePopup;
 
+        private OpenWeaponsIndexPrefsController _openWeaponsIndexPrefsController;
         private WeaponUpgradeSystem _weaponUpgradeSystem;
         private WeaponUpgradeProvider _weaponUpgradeProvider;
         private CloudZoneDetectorController _detectorController;
@@ -26,14 +27,16 @@ namespace Cloudy.UI
 
         [Inject]
         public void Construct(CloudZoneDetectorController detectorController, GameManager gameManager, 
-            WeaponUpgradeSystem weaponUpgradeSystem, WeaponUpgradeProvider weaponUpgradeProvider)
+            WeaponUpgradeSystem weaponUpgradeSystem, WeaponUpgradeProvider weaponUpgradeProvider,
+            OpenWeaponsIndexPrefsController openWeaponsIndexPrefsController)
         {
+            _openWeaponsIndexPrefsController = openWeaponsIndexPrefsController;
+            _weaponUpgradeSystem = weaponUpgradeSystem;
+            _weaponUpgradeProvider = weaponUpgradeProvider;
             _detectorController = detectorController;
             _detectorController.AllZonesСaptured += OnAllZonesСaptured;
 
             _gameManager = gameManager;
-            _weaponUpgradeSystem = weaponUpgradeSystem;
-            _weaponUpgradeProvider = weaponUpgradeProvider;
 
             _restartButton.onClick.AddListener(RestartGame);
             _exitButton.onClick.AddListener(ExitGame);
@@ -56,12 +59,13 @@ namespace Cloudy.UI
             _isWin = isWin;
             gameObject.SetActive(true);
             _resultGameText.text = _isWin ? "Победа" : "Поражение";
-            
-            if (_isWin && App.IsMaxLevel && App.CurrentLocation == App.OpenWeaponIndex + 1)
+            var weaponIndex = _openWeaponsIndexPrefsController.GetIndex();
+            if (_isWin && App.IsMaxLevel && App.CurrentLocation == weaponIndex + 1)
             {
-                App.OpenWeaponIndex++;
+                weaponIndex++;
+                _openWeaponsIndexPrefsController.SaveIndex(weaponIndex);
                 _openedWeaponText.gameObject.SetActive(true);
-                _openedWeaponText.text = $"Новое оружие {App.Weapons[App.OpenWeaponIndex]}";
+                _openedWeaponText.text = $"Новое оружие {App.Weapons[weaponIndex]}";
             }
 
             if (!_isWin)

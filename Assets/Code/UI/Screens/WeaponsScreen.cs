@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utils;
+using Zenject;
 
 namespace Cloudy.UI.Screens
 {
@@ -18,7 +19,14 @@ namespace Cloudy.UI.Screens
 
         private Pool<WeaponView> _pool;
         private readonly List<WeaponView> _weaponViews = new ();
+        private int _openWeaponsIndex;
 
+        [Inject]
+        public void Construct(OpenWeaponsIndexPrefsController openWeaponsIndexPrefsController)
+        {
+            _openWeaponsIndex = openWeaponsIndexPrefsController.GetIndex();
+        }
+        
         protected override void Awake()
         {
             base.Awake();
@@ -39,7 +47,7 @@ namespace Cloudy.UI.Screens
             }
 
             App.CurrentWeapons.Clear();
-            App.CurrentWeapons.AddRange(App.Weapons.Take(App.OpenWeaponIndex + 1).OrderBy(w => Random.value).Take(_weaponsCount));
+            App.CurrentWeapons.AddRange(App.Weapons.Take(_openWeaponsIndex + 1).OrderBy(w => Random.value).Take(_weaponsCount));
 
             for (var i = 0; i < App.CurrentWeapons.Count; i++)
             {

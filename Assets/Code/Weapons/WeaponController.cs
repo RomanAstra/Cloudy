@@ -1,4 +1,3 @@
-using UnityEngine;
 using Utils;
 
 namespace Cloudy
@@ -8,8 +7,9 @@ namespace Cloudy
         private readonly IFireInput _fireInput;
         private readonly IChangeWeaponInput _changeWeapon;
         private readonly WeaponsProvider _weaponsProvider;
-        private WeaponAdapter _currentWeaponAdapter;
         
+        public WeaponAdapter CurrentWeaponAdapter { get; private set; }
+
         public WeaponController(IFireInput fireInput, IChangeWeaponInput changeWeapon, WeaponsProvider weaponsProvider)
         {
             _fireInput = fireInput;
@@ -36,13 +36,13 @@ namespace Cloudy
 
         private void OnFired()
         {
-            _currentWeaponAdapter.Fire();
+            CurrentWeaponAdapter.Fire();
         }
         private void OnWeaponChanged()
         {
-            _currentWeaponAdapter?.Hide();
-            _currentWeaponAdapter = _weaponsProvider.GetNextWeapon();
-            _currentWeaponAdapter.Show();
+            CurrentWeaponAdapter?.Hide();
+            CurrentWeaponAdapter = _weaponsProvider.GetNextWeapon();
+            CurrentWeaponAdapter.Show();
         }
         private void Subscribe()
         {

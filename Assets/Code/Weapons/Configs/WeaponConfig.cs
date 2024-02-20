@@ -7,5 +7,7 @@ namespace Cloudy.Configs
     {
         public float FireDelay;
         public float Inaccuracy;
+        public float RecoilPower = 10f;
+        public float RotateionSpeed = 10f;
     }
 }

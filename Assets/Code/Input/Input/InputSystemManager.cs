@@ -5,8 +5,7 @@ using Utils;
 namespace Cloudy
 {
     public sealed class InputSystemManager : IFireInput, IMousePositionsInput, 
-        IChangeWeaponInput, IInitializer, IUpdate, IGameStart, IGameFinish, 
-        IGamePause, IGameResume
+        IChangeWeaponInput, IInitializer, IUpdate
     {
         private Controls _controls;
         private bool _isEnable;
@@ -24,9 +23,6 @@ namespace Cloudy
         }
         public void OnUpdate(float deltaTime)
         {
-            if(!_isEnable)
-                return;
-            
             if (_controls.Main.Fire.inProgress)
                 OnFired();
 
@@ -35,22 +31,6 @@ namespace Cloudy
 
             var point = _controls.Main.LookAt.ReadValue<Vector2>();
             OnRotated(point);
-        }
-        public void OnStart()
-        {
-            _isEnable = true;
-        }
-        public void OnFinish()
-        {
-            _isEnable = false;
-        }
-        public void OnPause()
-        {
-            _isEnable = false;
-        }
-        public void OnResume()
-        {
-            _isEnable = true;
         }
     }
 }

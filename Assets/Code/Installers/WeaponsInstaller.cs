@@ -9,9 +9,9 @@ namespace Cloudy
         {
             container.Bind<WeaponFactory>().AsCached().WithArguments(parent);
 
-            container.Bind<DataWeaponsProvider>().AsSingle().WithArguments(weapons).NonLazy();
+            container.Bind<DataWeaponsProvider>().AsSingle().WithArguments(weapons);
             container.BindInterfacesAndSelfTo<WeaponsProvider>().AsSingle();
-            container.BindInterfacesTo<WeaponController>().AsSingle();
+            container.BindInterfacesAndSelfTo<WeaponController>().AsSingle();
         }
     }
 }

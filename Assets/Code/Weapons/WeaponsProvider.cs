@@ -15,7 +15,7 @@ namespace Cloudy
         public WeaponsProvider(WeaponFactory weaponFactory, DataWeaponsProvider dataWeaponsProvider)
         {
             _weaponFactory = weaponFactory;
-            SpawnWeapons(dataWeaponsProvider.Weapons.Take(App.OpenWeaponIndex + 1));
+            SpawnWeapons(App.CurrentWeapons);
         }
 
         void IUpdate.OnUpdate(float deltaTime)

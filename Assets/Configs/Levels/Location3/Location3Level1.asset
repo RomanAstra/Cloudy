@@ -17,7 +17,7 @@ MonoBehaviour:
     SizeZone: {x: 2, y: 2}
     SpawnDelay: 10
     StartSpawnDelay: 0
-  - CloudName: Immortal
+  - CloudName: Moving
     SizeZone: {x: 2, y: 2}
     SpawnDelay: 10
     StartSpawnDelay: 0

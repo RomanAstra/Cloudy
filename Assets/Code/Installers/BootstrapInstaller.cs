@@ -10,7 +10,7 @@ namespace Cloudy
         [SerializeField] private GameManager _gameManager;
         [SerializeField] private Timer _timer;
 
-        [SerializeField] private Player _player;
+        [SerializeField] private PlayerHierarchy _player;
 
         [SerializeField] private CloudZoneDetectorController _detectorController;
 

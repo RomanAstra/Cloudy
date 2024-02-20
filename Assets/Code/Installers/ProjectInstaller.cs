@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Cloudy
 {
-    public sealed class WeaponUpgradesInstaller : MonoInstaller
+    public sealed class ProjectInstaller : MonoInstaller
     {
         [SerializeField] private AllWeaponsUpgradeConfig _weaponsUpgradeConfig; 
 
@@ -13,6 +13,7 @@ namespace Cloudy
             Container.BindInstance(_weaponsUpgradeConfig);
             Container.Bind<WeaponUpgradeProvider>().AsSingle();
             Container.Bind<WeaponUpgradeSystem>().AsSingle();
+            Container.Bind<OpenWeaponsIndexPrefsController>().AsSingle();
         }
     }
 }
