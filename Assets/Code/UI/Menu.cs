@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Cloudy.UI
 {
-    public class Menu : MonoBehaviour
+    public sealed class Menu : MonoBehaviour
     {
         private WeaponUpgradeProvider _weaponUpgradeProvider;
         private WeaponUpgradeSystem _weaponUpgradeSystem;
