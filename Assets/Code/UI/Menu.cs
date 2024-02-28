@@ -1,6 +1,4 @@
-﻿using Cloudy.UI.Screens;
-using Configs.Upgrades.Weapons;
-using Extensions;
+﻿using Code.UI;
 using UnityEngine;
 using Zenject;
 
@@ -8,21 +6,17 @@ namespace Cloudy.UI
 {
     public sealed class Menu : MonoBehaviour
     {
-        private WeaponUpgradeProvider _weaponUpgradeProvider;
-        private WeaponUpgradeSystem _weaponUpgradeSystem;
-        
+        private MainMenuPresenter _mainMenuPresenter;
+
         [Inject]
-        public void Construct(WeaponUpgradeProvider weaponUpgradeProvider, WeaponUpgradeSystem weaponUpgradeSystem)
+        public void Construct(MainMenuPresenter mainMenuPresenter)
         {
-            _weaponUpgradeProvider = weaponUpgradeProvider;
-            _weaponUpgradeSystem = weaponUpgradeSystem;
+            _mainMenuPresenter = mainMenuPresenter;
         }
         
         private void Start()
         {
-            _weaponUpgradeProvider.Reset();
-            _weaponUpgradeSystem.Reset();
-            ScreenManager.Show<MainScreen>();
+            _mainMenuPresenter.Show();
         }
     }
 }

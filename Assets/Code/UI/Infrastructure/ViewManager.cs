@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Ui
 {
@@ -22,7 +23,6 @@ namespace Ui
             if (!_viewMap.ContainsKey(type))
             {
                 _viewMap.Add(type, view);
-                _viewMap[type] = view;
             }
             else
             {

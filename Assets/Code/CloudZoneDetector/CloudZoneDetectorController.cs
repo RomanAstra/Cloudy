@@ -11,8 +11,8 @@ public class CloudZoneDetectorController : MonoBehaviour
 
     private CloudZoneDetector[] _detectors;
     private int _detectionCount;
-
-    public event Action AllZonesСaptured;
+    
+    public event Action AllZonesCaptured;
     
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class CloudZoneDetectorController : MonoBehaviour
         _detectionCount++;
         
         if(GetZoneProtectionProgress() == 0)
-            AllZonesСaptured?.Invoke();
+            AllZonesCaptured?.Invoke();
     }
     private void OnDetectorTriggerExit()
     {

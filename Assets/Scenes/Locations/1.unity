@@ -271,11 +271,11 @@ PrefabInstance:
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6159255194378333250, guid: f6e93f29c2b80234eb1d90e23add6a5e, type: 3}
-      propertyPath: _levels.Array.size
-      value: 0
+      propertyPath: _roundTime
+      value: 45
       objectReference: {fileID: 0}
-    - target: {fileID: 6159255194378333252, guid: f6e93f29c2b80234eb1d90e23add6a5e, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 6159255194378333250, guid: f6e93f29c2b80234eb1d90e23add6a5e, type: 3}
+      propertyPath: _levels.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

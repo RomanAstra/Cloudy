@@ -12,10 +12,10 @@ namespace Cloudy
         private readonly List<WeaponAdapter> _weaponAdapters = new();
         private int _weaponIndex = -1;
 
-        public WeaponsProvider(WeaponFactory weaponFactory, DataWeaponsProvider dataWeaponsProvider)
+        public WeaponsProvider(WeaponFactory weaponFactory, WeaponsDataProvider dataWeaponsProvider)
         {
             _weaponFactory = weaponFactory;
-            SpawnWeapons(App.CurrentWeapons);
+            SpawnWeapons(dataWeaponsProvider.GetCurrentWeapons());
         }
 
         void IUpdate.OnUpdate(float deltaTime)

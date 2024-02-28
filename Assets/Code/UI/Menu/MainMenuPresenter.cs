@@ -1,23 +1,22 @@
 ﻿using Ui;
-using UnityEngine;
 
 namespace Code.UI
 {
-    public sealed class MainMenuPresenter //: BasePresenter<MainMenuView>
+    public sealed class MainMenuPresenter : BasePresenter<MainMenuView, MainMenuViewModel>
     {
+        private readonly LocationsMenuPresenter _locationsMenuPresenter;
         private readonly IViewManager _viewManager;
 
-        public MainMenuPresenter(IViewManager viewManager)
+        public MainMenuPresenter(IViewManager viewManager, LocationsMenuPresenter locationsMenuPresenter) :  base(viewManager)
         {
             _viewManager = viewManager;
-            var mainMenuView = Object.FindFirstObjectByType<MainMenuView>();
-            _viewManager.Register(mainMenuView);
+            _locationsMenuPresenter = locationsMenuPresenter;
         }
-        
-        public void Show()
+
+        public override void Show()
         {
-            MainMenuViewModel viewModel = new MainMenuViewModel();
-            _viewManager.ShowWindow(viewModel);
+            var mainMenuViewModel = new MainMenuViewModel(_locationsMenuPresenter);
+            _viewManager.ShowWindow(mainMenuViewModel);
         }
     }
 }

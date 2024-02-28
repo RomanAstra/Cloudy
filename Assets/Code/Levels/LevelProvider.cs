@@ -6,9 +6,9 @@ namespace Cloudy
 {
     public sealed class LevelProvider : LocalAssetLoader
     {
-        public async UniTask<LevelHierarchy> Load(string levelName)
+        public async UniTask<LevelView> Load(string levelName)
         {
-            return await InstantiateAsync<LevelHierarchy>($"Location{App.CurrentLocation}Level{levelName}");
+            return await InstantiateAsync<LevelView>(levelName);
         }
     }
 }

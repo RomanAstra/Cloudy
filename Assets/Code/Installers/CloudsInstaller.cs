@@ -7,7 +7,7 @@ namespace Cloudy
     {
         public void Binding(DiContainer container)
         {
-            container.BindInterfacesAndSelfTo<CloudPoolFactory>().AsSingle();
+            container.Bind<CloudPoolFactory>().AsSingle();
         }
     }
 }

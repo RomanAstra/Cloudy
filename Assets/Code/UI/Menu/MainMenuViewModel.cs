@@ -5,11 +5,18 @@ namespace Code.UI
 {
     public sealed class MainMenuViewModel : IMainMenuViewModel
     {
-        public string Title { get; }
+        private readonly LocationsMenuPresenter _locationsMenuPresenter;
+        public string Title => "Меню";
         public event Action<IViewModel> OnClosed;
+
+        public MainMenuViewModel(LocationsMenuPresenter locationsMenuPresenter)
+        {
+            _locationsMenuPresenter = locationsMenuPresenter;
+        }
+        
         public void StartGame()
         {
-            
+            _locationsMenuPresenter.Show();
         }
         
         public void ShowSettings()

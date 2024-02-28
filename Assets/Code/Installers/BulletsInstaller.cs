@@ -7,7 +7,7 @@ namespace Cloudy
     {
         public void Binding(DiContainer container, Transform bulletsParent)
         {
-            container.BindInterfacesAndSelfTo<BulletPoolFactory>().AsSingle().WithArguments(bulletsParent);
+            container.Bind<BulletPoolFactory>().AsSingle().WithArguments(bulletsParent);
         }
     }
 }

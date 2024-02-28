@@ -9,33 +9,32 @@ namespace Code.UI
     {
         [SerializeField] private TMP_Text _titleText;
         [SerializeField] private Button _startGameButton;
-        [SerializeField] private Button _settingsButton;
+        //[SerializeField] private Button _settingsButton;
         
         private IMainMenuViewModel _viewModel;
         public IViewModel ViewModel => _viewModel;
 
-        public void Initialize(IMainMenuViewModel viewModel)
+        void IView<IMainMenuViewModel>.Initialize(IMainMenuViewModel viewModel)
         {
             _viewModel = viewModel;
+            //_titleText.text = viewModel.Title;
         }
 
         private void OnEnable()
         {
             _startGameButton.onClick.AddListener(StartGame);
-            _settingsButton.onClick.AddListener(ShowSettings);
+            //_settingsButton.onClick.AddListener(ShowSettings);
         }
-        
         private void OnDisable()
         {
             _startGameButton.onClick.RemoveListener(StartGame);
-            _settingsButton.onClick.RemoveListener(ShowSettings);
+            //_settingsButton.onClick.RemoveListener(ShowSettings);
         }
-
+        
         private void ShowSettings()
         {
             _viewModel.ShowSettings();
         }
-
         private void StartGame()
         {
             _viewModel.StartGame();
@@ -45,18 +44,17 @@ namespace Code.UI
         {
             gameObject.SetActive(true);
         }
-
         public void Hide()
         {
             gameObject.SetActive(false);
         }
-
         public void Unfocus()
         {
+            Hide();
         }
-
         public void Focus()
         {
+            Show();
         }
     }
 }

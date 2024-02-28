@@ -17,6 +17,8 @@ namespace Configs.Upgrades.Weapons
             {
                 _configsMap[configs.Key] = new List<StatConfig>(configs.Value.Configs);
             }
+            
+            Reset();
         }
         
         public StatConfig GetConfig(string weaponType)

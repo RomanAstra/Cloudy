@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireDelay: 0.2
   Inaccuracy: 0
+  RecoilPower: 10
+  RotateionSpeed: 10
