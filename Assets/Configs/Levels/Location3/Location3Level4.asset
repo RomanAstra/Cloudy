@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 969fb569b66b44cbb314d1f813e6b07c, type: 3}
-  m_Name: Location2Level2
+  m_Name: Location3Level4
   m_EditorClassIdentifier: 
   ZonesSettings:
-  - CloudName: Circle
-    SizeZone: {x: 4, y: 2}
-    SpawnDelay: 3
-    StartSpawnDelay: 6
   - CloudName: Immortal
-    SizeZone: {x: 4.6, y: 3}
-    SpawnDelay: 5
-    StartSpawnDelay: 7
-  - CloudName: Rhomb
-    SizeZone: {x: 3, y: 2.4}
-    SpawnDelay: 4
-    StartSpawnDelay: 2
+    SizeZone: {x: 2, y: 2}
+    SpawnDelay: 10
+    StartSpawnDelay: 0
+  - CloudName: Moving
+    SizeZone: {x: 5, y: 2}
+    SpawnDelay: 10
+    StartSpawnDelay: 0
   - CloudName: Immortal
-    SizeZone: {x: 2.5, y: 4}
-    SpawnDelay: 3
-    StartSpawnDelay: 7
-  - CloudName: Circle
-    SizeZone: {x: 2.6, y: 3.4}
-    SpawnDelay: 6
-    StartSpawnDelay: 8
+    SizeZone: {x: 2, y: 1}
+    SpawnDelay: 10
+    StartSpawnDelay: 0
+  - CloudName: BeatOff
+    SizeZone: {x: 2, y: 1}
+    SpawnDelay: 10
+    StartSpawnDelay: 0
+  - CloudName: Immortal
+    SizeZone: {x: 2, y: 2}
+    SpawnDelay: 10
+    StartSpawnDelay: 0

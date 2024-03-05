@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf85f5c3178b496da2ee76ed9567be33, type: 3}
   m_Name: ImmortalCloudConfig
   m_EditorClassIdentifier: 
-  HitPoints: 15
+  HitPoints: 10
   CaptureSpeed: 0.5
   ShieldTime: 3
   ShieldDelay: 2

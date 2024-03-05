@@ -196,8 +196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Rhomb
   SizeZone: {x: 3.5, y: 2}
-  SpawnDelay: 17
-  StartSpawnDelay: 8
+  SpawnDelay: 5
+  StartSpawnDelay: 3
 --- !u!1 &7732990730404558954
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,8 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Rhomb
   SizeZone: {x: 3.5, y: 2}
-  SpawnDelay: 12
-  StartSpawnDelay: 7
+  SpawnDelay: 4
+  StartSpawnDelay: 2
 --- !u!1 &7732990730770895201
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,8 +292,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Circle
   SizeZone: {x: 4.6, y: 3}
-  SpawnDelay: 14
-  StartSpawnDelay: 7
+  SpawnDelay: 3.5
+  StartSpawnDelay: 1.5
 --- !u!1 &7732990731106806118
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,8 +340,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Circle
   SizeZone: {x: 3, y: 4.2}
-  SpawnDelay: 12
-  StartSpawnDelay: 2
+  SpawnDelay: 4
+  StartSpawnDelay: 1
 --- !u!1 &7732990731150125677
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,8 +584,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Circle
   SizeZone: {x: 4, y: 2}
-  SpawnDelay: 11
-  StartSpawnDelay: 6
+  SpawnDelay: 3
+  StartSpawnDelay: 1
 --- !u!1 &7732990731542949848
 GameObject:
   m_ObjectHideFlags: 0

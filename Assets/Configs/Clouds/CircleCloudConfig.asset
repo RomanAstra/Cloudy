@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a303f22de3401698b2167377badb5d, type: 3}
   m_Name: CircleCloudConfig
   m_EditorClassIdentifier: 
-  HitPoints: 30
+  HitPoints: 10
   CaptureSpeed: 0.7

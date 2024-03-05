@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: Location3Level1
   m_EditorClassIdentifier: 
   ZonesSettings:
-  - CloudName: Immortal
+  - CloudName: Circle
     SizeZone: {x: 2, y: 2}
-    SpawnDelay: 10
-    StartSpawnDelay: 0
-  - CloudName: Moving
-    SizeZone: {x: 2, y: 2}
-    SpawnDelay: 10
+    SpawnDelay: 12
     StartSpawnDelay: 0
   - CloudName: Immortal
-    SizeZone: {x: 2, y: 2}
-    SpawnDelay: 10
-    StartSpawnDelay: 0
-  - CloudName: BeatOff
-    SizeZone: {x: 2, y: 2}
-    SpawnDelay: 10
-    StartSpawnDelay: 0
+    SizeZone: {x: 5, y: 2}
+    SpawnDelay: 17
+    StartSpawnDelay: 4
+  - CloudName: Rhomb
+    SizeZone: {x: 2, y: 1}
+    SpawnDelay: 19
+    StartSpawnDelay: 3
+  - CloudName: Rhomb
+    SizeZone: {x: 2, y: 1}
+    SpawnDelay: 15
+    StartSpawnDelay: 8
   - CloudName: Immortal
     SizeZone: {x: 2, y: 2}
-    SpawnDelay: 10
-    StartSpawnDelay: 0
+    SpawnDelay: 16
+    StartSpawnDelay: 4

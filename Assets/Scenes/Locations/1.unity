@@ -272,7 +272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6159255194378333250, guid: f6e93f29c2b80234eb1d90e23add6a5e, type: 3}
       propertyPath: _roundTime
-      value: 45
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6159255194378333250, guid: f6e93f29c2b80234eb1d90e23add6a5e, type: 3}
       propertyPath: _levels.Array.size
