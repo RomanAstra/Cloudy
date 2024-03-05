@@ -53,15 +53,15 @@ namespace Cloudy
         {
             _hierarchy.Rigidbody.velocity = _speed * direction;
         }
-        public void OnFinish()
+        void IGameFinish.OnFinish()
         {
             _rigidbodyController.OnFinish();
         }
-        public void OnPause()
+        void IGamePause.OnPause()
         {
             _rigidbodyController.OnPause();
         }
-        public void OnResume()
+        void IGameResume.OnResume()
         {
             _rigidbodyController.OnResume();
         }

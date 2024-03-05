@@ -15,19 +15,13 @@ namespace Cloudy
 
             _bulletsCount += (int)weaponUpgradeSystem.GetValue(id, StatType.Bullets);
         }
-
-        public override void Fire()
+        
+        protected override void SpawnBullet()
         {
-            if(!_fireDelay.IsEnded)
-                return;
-
-            _fireDelay.Reset();
             for (var i = 0; i < _bulletsCount; i++)
             {
-                SpawnBullet();
+                base.SpawnBullet();
             }
-
-            Recoil();
         }
     }
 }

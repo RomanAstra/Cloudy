@@ -5,6 +5,8 @@ namespace Cloudy
     public sealed class WeaponHierarchy : MonoBehaviour
     {
         public Transform FirePoint;
+        public ParticleSystem FireParticles;
+        public AudioClip FireAudioClip;
 
         public void Show()
         {

@@ -1,6 +1,7 @@
 ﻿using Code.UI;
 using UnityEngine;
 using Zenject;
+using YG;
 
 namespace Cloudy.UI
 {
@@ -16,7 +17,12 @@ namespace Cloudy.UI
         
         private void Start()
         {
+            YandexGame.StickyAdActivity(true);
             _mainMenuPresenter.Show();
+        }
+        private void OnDestroy()
+        {
+            YandexGame.StickyAdActivity(false);
         }
     }
 }

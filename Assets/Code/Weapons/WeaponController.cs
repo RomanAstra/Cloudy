@@ -1,3 +1,4 @@
+using UnityEngine;
 using Utils;
 
 namespace Cloudy
@@ -7,14 +8,17 @@ namespace Cloudy
         private readonly IFireInput _fireInput;
         private readonly IChangeWeaponInput _changeWeapon;
         private readonly WeaponsProvider _weaponsProvider;
-        
+        private readonly AudioSource _audioSource;
+
         public WeaponAdapter CurrentWeaponAdapter { get; private set; }
 
-        public WeaponController(IFireInput fireInput, IChangeWeaponInput changeWeapon, WeaponsProvider weaponsProvider)
+        public WeaponController(IFireInput fireInput, IChangeWeaponInput changeWeapon, 
+            WeaponsProvider weaponsProvider, AudioSource audioSource)
         {
             _fireInput = fireInput;
             _changeWeapon = changeWeapon;
             _weaponsProvider = weaponsProvider;
+            _audioSource = audioSource;
         }
         void IGameStart.OnStart()
         {
@@ -36,7 +40,8 @@ namespace Cloudy
 
         private void OnFired()
         {
-            CurrentWeaponAdapter.Fire();
+            if(CurrentWeaponAdapter.Fire())
+                _audioSource.PlayOneShot(CurrentWeaponAdapter.FireAudioClip);
         }
         private void OnWeaponChanged()
         {

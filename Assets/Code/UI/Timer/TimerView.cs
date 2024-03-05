@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using Utils;
+using YG;
 
 namespace Code.UI
 {
@@ -16,9 +17,15 @@ namespace Code.UI
         public void Initialize(ITimerModel viewModel)
         {
             _viewModel = viewModel;
+            YandexGame.RewardVideoEvent += Rewarded;
             SetTime();
         }
-        
+
+        private void OnDestroy()
+        {
+            YandexGame.RewardVideoEvent -= Rewarded;
+        }
+
         public void OnUpdate(float deltaTime)
         {
             if(_viewModel.Timer.IsEnded)
@@ -37,6 +44,10 @@ namespace Code.UI
         private void SetTime()
         {
             _timerText.text = _viewModel.Timer.CurrentTime.ToString("00");
+        }
+        private void Rewarded(int id)
+        {
+            _viewModel.SetReward();
         }
     }
 }

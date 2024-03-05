@@ -1,25 +1,34 @@
-﻿using Code.UI;
+﻿using Cloudy.SaveData;
+using Code.UI;
 
 namespace Cloudy.UI
 {
     public sealed class LocationViewModel : ILocationViewModel
     {
-        private readonly int _id;
         private readonly WeaponsMenuPresenter _weaponsMenuPresenter;
         private readonly LocationsData _locationsData;
         public string Title { get; }
+        public string Stars { get; } = "0/15";
+        public string NeedStarsToOpen { get; }
 
-        public LocationViewModel(int id, WeaponsMenuPresenter weaponsMenuPresenter, LocationsData locationsData)
+        public LocationViewModel(OpenObjectStarsData location, WeaponsMenuPresenter weaponsMenuPresenter, LocationsData locationsData, 
+            SaveSystem saveSystem)
         {
-            _id = id;
+            Title = location.Id;
             _weaponsMenuPresenter = weaponsMenuPresenter;
             _locationsData = locationsData;
-            Title = _locationsData.Locations[_id - 1];
+
+            if(saveSystem.SaveData.TryGetLocationData(Title, out var data))
+                Stars = $"{data.Stars}/15";
+
+            var starsCount = saveSystem.SaveData.GetStarsCount();
+            if(location.StarsCount > starsCount)
+                NeedStarsToOpen = $"{starsCount}/{location.StarsCount}";
         }
         
         public void ShowWeaponMenu()
         {
-            _locationsData.CurrentLocation = _id;
+            _locationsData.CurrentLocation = Title;
             _weaponsMenuPresenter.Show();
         }
     }

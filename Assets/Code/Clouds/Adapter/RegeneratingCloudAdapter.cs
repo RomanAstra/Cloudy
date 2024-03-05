@@ -17,10 +17,8 @@ namespace Cloudy.Adapter
         
         private void AddHitPoints()
         {
-            _currentHitPoints = Mathf.Min(_currentHitPoints + _config.HitPointsRegeneratingCount, 
-                _config.HitPoints);
-            
-            SetHitPoints(_currentHitPoints);
+            SetHitPoints(Mathf.Min(_currentHitPoints + _config.HitPointsRegeneratingCount, 
+                _config.HitPoints));
         }
         
         public override void OnUpdate(float deltaTime)

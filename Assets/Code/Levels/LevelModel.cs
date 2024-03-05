@@ -15,7 +15,8 @@ namespace Cloudy
         private readonly LevelConfigLoader _levelConfigLoader = new();
         private  CloudSpawnZoneAdapter[] _cloudSpawnZoneAdapters;
         private IReadOnlyList<CloudSpawnZoneHierarchy> _cloudSpawnZones;
-        private string _levelName;
+        
+        public string LevelName { get; private set; }
 
         public LevelModel(CloudPoolFactory cloudPoolFactory, GameManager gameManager)
         {
@@ -26,7 +27,7 @@ namespace Cloudy
         public async UniTask CreateSpawnZones(IReadOnlyList<CloudSpawnZoneHierarchy> cloudSpawnZones, string levelName)
         {
             _cloudSpawnZones = cloudSpawnZones;
-            _levelName = levelName;
+            LevelName = levelName;
             _cloudSpawnZoneAdapters = new CloudSpawnZoneAdapter[_cloudSpawnZones.Count];
             var config = await _levelConfigLoader.LoadAsync(levelName.Replace("(Clone)", ""));
 
@@ -47,39 +48,6 @@ namespace Cloudy
             {
                 _gameManager.Remove(adapter);
             }
-        }
-        public void CreateSpawnZonesConfig()
-        {
-            if (_cloudSpawnZones.Count == 0)
-                return;
-
-            var levelConfig = ScriptableObject.CreateInstance<LevelConfig>();
-            levelConfig.ZonesSettings = new ZoneSettings[_cloudSpawnZones.Count];
-            for (var i = 0; i < _cloudSpawnZones.Count; i++)
-            {
-                var zone = _cloudSpawnZones[i];
-                var objZone = new ZoneSettings();
-                levelConfig.ZonesSettings[i] = objZone;
-
-                objZone.CloudName = zone.CloudName;
-                objZone.SizeZone = zone.SizeZone;
-                objZone.SpawnDelay = zone.SpawnDelay;
-                objZone.StartSpawnDelay = zone.StartSpawnDelay;
-            }
-
-            var levelName = _levelName;
-            var indexSubstring = levelName.IndexOf("Level", StringComparison.Ordinal);
-            var location = levelName.Substring(0, indexSubstring);
-            var level = levelName.Substring(indexSubstring);
-
-            var folder = $"Assets/Configs/Levels/{location}";
-            if (!AssetDatabase.IsValidFolder(folder))
-            {
-                var guid = AssetDatabase.CreateFolder("Assets/Configs/Levels", location);
-                AssetDatabase.GUIDToAssetPath(guid);
-            }
-
-            AssetDatabase.CreateAsset(levelConfig, $"{folder}/{location}{level}.asset");
         }
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface ILevelProgressModel
     {
-        public int Percent { get; }
+        int Percent { get; }
     }
 }

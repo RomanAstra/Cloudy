@@ -4,7 +4,8 @@ using Utils;
 
 namespace Cloudy.Adapter
 {
-    public sealed class MovingCloudAdapter : CloudAdapter, IGameFinish
+    public sealed class MovingCloudAdapter : CloudAdapter, 
+        IGamePause, IGameResume, IGameFinish
     {
         private readonly MovingCloudHierarchy _hierarchy;
         private readonly MovingCloudConfig _config;
@@ -18,21 +19,31 @@ namespace Cloudy.Adapter
             _config = config;
             StartTween();
         }
-        public void OnFinish()
+
+        void IGamePause.OnPause()
         {
-            _tween?.Kill();
+            _tween?.Pause();
         }
-        
-        protected override void Release()
+        void IGameResume.OnResume()
         {
-            base.Release();
+            _tween?.Play();
+        }
+        void IGameFinish.OnFinish()
+        {
+            _tween?.Pause();
+        }
+
+        protected override void OnDealDamage(int damage)
+        {
+            base.OnDealDamage(damage);
             
-            _tween?.Kill();
+            if (_currentHitPoints == 0)
+                _tween?.Kill();
         }
         private void StartTween()
         {
             _tween = _hierarchy.BodyTransform.DOLocalMove(_hierarchy.TargetPoints[_pointIndex], _config.Duration).SetEase(Ease.Linear).
-                OnComplete(() =>
+                SetLink(_hierarchy.BodyTransform.gameObject).OnComplete(() =>
                 {
                     if (_isMoveNextPoint)
                     {

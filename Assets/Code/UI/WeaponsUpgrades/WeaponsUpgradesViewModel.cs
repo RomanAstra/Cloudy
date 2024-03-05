@@ -29,7 +29,7 @@ namespace Code.UI
             var weapons = dataWeaponsProvider.GetCurrentWeapons();
             for (var i = 0; i < upgradesCount; i++)
             {
-                var weapon = weapons[Random.Range(0, weapons.Length)];
+                var weapon = weapons[Random.Range(0, weapons.Count)];
                 var config = _weaponUpgradeProvider.GetConfig(weapon);
 
                  var sb = new StringBuilder(weapon);

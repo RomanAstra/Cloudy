@@ -8,7 +8,7 @@ namespace Cloudy
     {
         public event Action onCollisionEnter;
         
-        private void OnCollisionEnter()
+        private void OnCollisionEnter(Collision other)
         {
             onCollisionEnter?.Invoke();
         }

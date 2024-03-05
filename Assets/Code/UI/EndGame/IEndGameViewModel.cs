@@ -4,14 +4,16 @@ namespace Code.UI
 {
     public interface IEndGameViewModel : IViewModel
     {
-        public IOpenWeaponModel OpenWeaponModel { get; }
-        public ILevelProgressModel ProgressLevelModel { get; }
-        public string ResultGame { get; }
-        public bool CanContinue { get; }
-        
+        ILevelProgressModel ProgressLevelModel { get; }
+        string ResultGame { get; }
+        bool CanContinue { get; }
+        bool CanShowAds { get; }
+
         void Show();
-        void ShowWeaponsUpgrades();
+        void ContinueGame();
         void RestartGame();
         void ExitGame();
+        void ShowAds();
+        void GameResume();
     }
 }

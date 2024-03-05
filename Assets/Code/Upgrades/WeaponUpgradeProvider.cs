@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cloudy.Configs;
-using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Configs.Upgrades.Weapons
@@ -23,22 +23,13 @@ namespace Configs.Upgrades.Weapons
         
         public StatConfig GetConfig(string weaponType)
         {
-            //todo for test
             if (!_tempMap.ContainsKey(weaponType))
-            {
-                Debug.Log($"Configs with {weaponType} type not exist");
-                return null;
-                //throw new InvalidOperationException($"Configs with {weaponType} type not exist");
-            }
+                throw new InvalidOperationException($"Configs with {weaponType} type not exist");
             
             var configs = _tempMap[weaponType];
 
             if (configs.Count == 0)
-            {
-                Debug.Log($"Configs with {weaponType} type has empty");
-                return null;
-                //throw new InvalidOperationException($"Configs with {weaponType} type has empty");
-            }
+                throw new InvalidOperationException($"Configs with {weaponType} type has empty");
             
             var index = Random.Range(0, configs.Count);
             var config = configs[index];
@@ -55,11 +46,14 @@ namespace Configs.Upgrades.Weapons
         {
             foreach (var configs in _providedConfigs)
             {
-                foreach (var value in configs.Value)
+                for (var i = 0; i < configs.Value.Count; i++)
                 {
-                    if(value != config)
+                    var value = configs.Value[i];
+                    
+                    if (value != config)
                         _tempMap[configs.Key].Add(value);
                 }
+
                 configs.Value.Clear();
             }
         }

@@ -4,6 +4,7 @@ namespace Code.UI
 {
     public interface ITimerModel
     {
-        public Countdown Timer { get; }
+        Countdown Timer { get; }
+        void SetReward();
     }
 }

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ac0f6f062a4afcba1a302e16304dc1, type: 3}
+  m_Name: LocationsConfig
+  m_EditorClassIdentifier: 
+  _objects:
+  - <Id>k__BackingField: 1
+    <StarsCount>k__BackingField: 0
+  - <Id>k__BackingField: 2
+    <StarsCount>k__BackingField: 10
+  - <Id>k__BackingField: 3
+    <StarsCount>k__BackingField: 20
+  - <Id>k__BackingField: 4
+    <StarsCount>k__BackingField: 30
+  - <Id>k__BackingField: 5
+    <StarsCount>k__BackingField: 40
+  - <Id>k__BackingField: 6
+    <StarsCount>k__BackingField: 50
+  - <Id>k__BackingField: 7
+    <StarsCount>k__BackingField: 60
+  - <Id>k__BackingField: 8
+    <StarsCount>k__BackingField: 70
+  - <Id>k__BackingField: 9
+    <StarsCount>k__BackingField: 80

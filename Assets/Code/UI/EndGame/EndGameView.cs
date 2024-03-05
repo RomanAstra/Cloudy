@@ -2,6 +2,7 @@
 using Ui;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 using Zenject;
 
 namespace Code.UI
@@ -9,13 +10,14 @@ namespace Code.UI
     public sealed class EndGameView : MonoBehaviour, IView<IEndGameViewModel>
     {
         [SerializeField] private TextMeshProUGUI _resultGameText;
-        [SerializeField] private OpenWeaponView _openedWeaponView;
         [SerializeField] private LevelProgressView _levelProgressView;
         [SerializeField] private Button _restartButton;
         [SerializeField] private Button _exitButton;
-        [SerializeField] private Button _continurButton;
+        [SerializeField] private Button _continueButton;
+        [SerializeField] private Button _adsButton;
 
         private IEndGameViewModel _viewModel;
+        private bool _isFirstRewardVideo = true;
 
         public IViewModel ViewModel => _viewModel;
 
@@ -24,7 +26,8 @@ namespace Code.UI
         {
             _restartButton.onClick.AddListener(RestartGame);
             _exitButton.onClick.AddListener(ExitGame);
-            _continurButton.onClick.AddListener(ContinueGame);
+            _continueButton.onClick.AddListener(ContinueGame);
+            _adsButton.onClick.AddListener(ShowAds);
         }
         void IView<IEndGameViewModel>.Initialize(IEndGameViewModel viewModel)
         {
@@ -35,7 +38,8 @@ namespace Code.UI
         {
             _restartButton.onClick.RemoveAllListeners();
             _exitButton.onClick.RemoveAllListeners();
-            _continurButton.onClick.RemoveAllListeners();
+            _continueButton.onClick.RemoveAllListeners();
+            _adsButton.onClick.RemoveAllListeners();
         }
         
         public void Show()
@@ -45,15 +49,15 @@ namespace Code.UI
             
             _resultGameText.text = _viewModel.ResultGame;
             
-            _openedWeaponView.Initialize(_viewModel.OpenWeaponModel);
-            
             _levelProgressView.Initialize(_viewModel.ProgressLevelModel);
             
-            _continurButton.gameObject.SetActive(_viewModel.CanContinue);
+            _continueButton.gameObject.SetActive(_viewModel.CanContinue);
+            _adsButton.gameObject.SetActive(_viewModel.CanShowAds && _isFirstRewardVideo);
         }
         public void Hide()
         {
             gameObject.SetActive(false);
+            _viewModel.Close();
         }
         public void Unfocus()
         {
@@ -61,13 +65,11 @@ namespace Code.UI
         }
         public void Focus()
         {
-            Show();
         }
         
         private void RestartGame()
         {
             _viewModel.RestartGame();
-            
         }
         private void ExitGame()
         {
@@ -75,7 +77,19 @@ namespace Code.UI
         }
         private void ContinueGame()
         {
-            _viewModel.ShowWeaponsUpgrades();
+            _viewModel.ContinueGame();
+        }
+        private void ShowAds()
+        {
+            _isFirstRewardVideo = false;
+            YandexGame.CloseVideoEvent += ResumeGame;
+            _viewModel.ShowAds();
+        }
+        private void ResumeGame()
+        {
+            YandexGame.CloseVideoEvent -= ResumeGame;
+            _viewModel.GameResume();
+            Hide();
         }
     }
 }

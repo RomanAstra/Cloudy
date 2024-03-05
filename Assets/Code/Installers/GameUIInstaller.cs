@@ -6,10 +6,10 @@ namespace Cloudy
 {
     public sealed class GameUIInstaller
     {
-        public void Binding(DiContainer container, int upgradesCount, int percentToWin)
+        public void Binding(DiContainer container, int upgradesCount)
         {
             container.Bind<EndGameObserver>().AsSingle().NonLazy();
-            container.Bind<EndGamePresenter>().AsSingle().WithArguments(percentToWin);
+            container.Bind<EndGamePresenter>().AsSingle();
             container.Bind<WeaponsUpgradesPresenter>().AsSingle().WithArguments(upgradesCount);
             container.BindInterfacesTo<ViewManager>().AsSingle();
         }

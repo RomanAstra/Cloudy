@@ -5,8 +5,9 @@ namespace Cloudy
 {
     public interface ILevelModel
     {
+        string LevelName { get; }
+        
         UniTask CreateSpawnZones(IReadOnlyList<CloudSpawnZoneHierarchy> cloudSpawnZones, string levelName);
         void OnDestroy();
-        void CreateSpawnZonesConfig();
     }
 }

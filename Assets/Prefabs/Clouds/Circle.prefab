@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 3748030394343997089}
   - component: {fileID: 5721855224398401588}
   - component: {fileID: 2707461283338121398}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7216657078174557044}
   - component: {fileID: 7216657078174557047}
-  m_Layer: 0
+  - component: {fileID: 597872138464061113}
+  - component: {fileID: 5818657891869403104}
+  m_Layer: 17
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,6 +273,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ZoneTransform: {fileID: 4962708417762528922}
   HitPointsText: {fileID: 4024276181866013668}
+  Rigidbody: {fileID: 597872138464061113}
+  HitCollider: {fileID: 8427055619109322760}
+  ExplosionAudioClip: {fileID: 8300000, guid: 60080addc65676b46b47b286535924d6, type: 3}
+--- !u!54 &597872138464061113
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7216657078174557043}
+  serializedVersion: 2
+  m_Mass: 50
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &5818657891869403104
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7216657078174557043}
+  m_Material: {fileID: 13400000, guid: abb8754ed4a000745bda9f4569c6662d, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7575948537730517995
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +317,7 @@ GameObject:
   - component: {fileID: 4521920165506861146}
   - component: {fileID: 6849214169063693798}
   - component: {fileID: 4024276181866013668}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HitPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,49 +1,58 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Cloudy.SaveData;
 using UnityEngine;
 
 namespace Cloudy
 {
     public sealed class WeaponsDataProvider
     {
-        private readonly string[] _weapons;
+        private readonly IReadOnlyList<OpenObjectStarsData> _weapons;
         private readonly List<string> _currentWeapons = new();
-        private readonly OpenWeaponsPrefsController _openWeaponsIndexPrefsController;
+        private readonly Dictionary<string, OpenObjectStarsData> _openedWeapons = new();
             
-        public WeaponsDataProvider(string[] weapons, OpenWeaponsPrefsController openWeaponsIndexPrefsController)
+        public WeaponsDataProvider(IReadOnlyList<OpenObjectStarsData> weapons, SaveSystem saveSystem)
         {
             _weapons = weapons;
-            _openWeaponsIndexPrefsController = openWeaponsIndexPrefsController;
+
+            var starsCount = saveSystem.SaveData.GetStarsCount();
+            for (var i = 0; i < _weapons.Count; i++)
+            {
+                var weapon = _weapons[i];
+                
+                if(weapon.StarsCount <= starsCount)
+                    _openedWeapons.Add(weapon.Id, weapon);
+            }
         }
         
-        public string[] GetWeapons()
+        public IReadOnlyList<OpenObjectStarsData> GetWeapons()
         {
             return _weapons.ToArray();
         }
-        public string GetWeapon(int index)
+        public IReadOnlyList<string> GetCurrentWeapons()
         {
-            return _weapons[index];
+            return _currentWeapons;
         }
-        public string[] GetCurrentWeapons()
+        public bool CheckOpenedWeapons(string weaponId)
         {
-            return _currentWeapons.ToArray();
+            return _openedWeapons.ContainsKey(weaponId);
         }
-        public string[] GetRandomWeapons(int count)
+        public IReadOnlyList<string> GetRandomWeapons(int count)
         {
             RollWeapons(count);
-            return _currentWeapons.ToArray();
+            return _currentWeapons;
+        }
+        public void AddOpenWeapon(OpenObjectStarsData weapon)
+        {
+            _openedWeapons.Add(weapon.Id, weapon);
         }
 
         private void RollWeapons(int count)
         {
             _currentWeapons.Clear();
-            var openCount = _openWeaponsIndexPrefsController.GetCount();
+            var openCount = _openedWeapons.Count;
             var tempWeapons = new List<string>();
-
-            for (var i = 0; i < openCount; i++)
-            {
-                tempWeapons.Add(_weapons[i]);
-            }
+            tempWeapons.AddRange(_openedWeapons.Keys);
 
             var length = openCount < count ? openCount : count;
             if (length <= count)

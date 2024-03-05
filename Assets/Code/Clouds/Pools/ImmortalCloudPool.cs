@@ -10,14 +10,18 @@ namespace Cloudy.Pools
         private readonly Transform _parent;
         private readonly GameManager _gameManager;
         private readonly ImmortalCloudConfig _config;
+        private readonly AudioSource _audioSource;
+        private readonly ParticleSystem _particleSystem;
         private readonly Pool<ImmortalCloudHierarchy> _hierarchyPool;
 
-        public ImmortalCloudPool(Transform parent, ImmortalCloudHierarchy cloudPrefab, 
-            GameManager gameManager, ImmortalCloudConfig config)
+        public ImmortalCloudPool(Transform parent, ImmortalCloudHierarchy cloudPrefab, GameManager gameManager, 
+            ImmortalCloudConfig config, AudioSource audioSource, ParticleSystem particleSystem)
         {
             _parent = parent;
             _gameManager = gameManager;
             _config = config;
+            _audioSource = audioSource;
+            _particleSystem = particleSystem;
             _hierarchyPool = new Pool<ImmortalCloudHierarchy>(cloudPrefab);
         }
         
@@ -34,6 +38,10 @@ namespace Cloudy.Pools
             _hierarchyPool.Release((ImmortalCloudHierarchy)hierarchy);
             _gameManager.Remove(adapter);
             adapter.OnRelease -= OnRelease;
+            
+            _particleSystem.transform.position = hierarchy.transform.position;
+            _particleSystem.Play();
+            _audioSource.PlayOneShot(hierarchy.ExplosionAudioClip);
         }
     }
 }

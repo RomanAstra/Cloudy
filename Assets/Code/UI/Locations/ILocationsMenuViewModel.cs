@@ -8,7 +8,5 @@ namespace Code.UI
     {
         string Title { get; }
         IReadOnlyList<ILocationViewModel> LocationViewModels { get; }
-        
-        void ShowWeaponsMenu();
     }
 }

@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ac0f6f062a4afcba1a302e16304dc1, type: 3}
   m_Name: WeaponsConfig
   m_EditorClassIdentifier: 
-  Weapons:
-  - Pistol
-  - Shotgun
-  - SniperRifle
-  - Freezing
-  - Ricochet
-  - Strengthening
-  - Through
+  _objects:
+  - <Id>k__BackingField: Pistol
+    <StarsCount>k__BackingField: 0
+  - <Id>k__BackingField: Shotgun
+    <StarsCount>k__BackingField: 12
+  - <Id>k__BackingField: SniperRifle
+    <StarsCount>k__BackingField: 24
+  - <Id>k__BackingField: Freezing
+    <StarsCount>k__BackingField: 36
+  - <Id>k__BackingField: Ricochet
+    <StarsCount>k__BackingField: 48
+  - <Id>k__BackingField: Strengthening
+    <StarsCount>k__BackingField: 60
+  - <Id>k__BackingField: Through
+    <StarsCount>k__BackingField: 72

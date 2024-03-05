@@ -109,10 +109,6 @@ MonoBehaviour:
     m_Address: FreezingBullet
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: b0875e2297ceb584da6cf504fc518f4c
-    m_Address: WeaponsConfig
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: a182484ca1eaf5647a491840c4bdfb4d
     m_Address: BeatOff
     m_ReadOnly: 0

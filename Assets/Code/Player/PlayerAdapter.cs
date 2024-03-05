@@ -11,35 +11,35 @@ namespace Cloudy
         private readonly IMousePositionsInput _mousePositionsInput;
         private readonly WeaponController _weaponController;
         private readonly Transform _weaponContainer;
-        private readonly int _inaccuracy = 10;
+        private float _velocity;
 
         private PlayerAdapter(PlayerHierarchy hierarchy, IMousePositionsInput mousePositionsInput, WeaponController weaponController)
         {
             _hierarchy = hierarchy;
-            _weaponContainer = _hierarchy.WeaponContainer;
             _camera = Camera.main;
             _mousePositionsInput = mousePositionsInput;
             _weaponController = weaponController;
+            _weaponContainer = _hierarchy.WeaponContainer;
         }
 
         private void LookAt(Vector2 point)
         {
             _weaponContainer.eulerAngles = Rotate(point);
         }
-        
-        public void OnStart()
+
+        void IGameStart.OnStart()
         {
             _mousePositionsInput.OnRotated += LookAt;
         }
-        public void OnFinish()
+        void IGameFinish.OnFinish()
         {
             _mousePositionsInput.OnRotated -= LookAt;
         }
-        public void OnPause()
+        void IGamePause.OnPause()
         {
             _mousePositionsInput.OnRotated -= LookAt;
         }
-        public void OnResume()
+        void IGameResume.OnResume()
         {
             _mousePositionsInput.OnRotated += LookAt;
         }
@@ -47,12 +47,11 @@ namespace Cloudy
         private Vector3 Rotate(Vector2 point)
         {
             var difference = _camera.ScreenToWorldPoint(point) - _weaponContainer.position;
-            var angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg + 180;
+            var angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             var euler = _weaponContainer.eulerAngles;
-            var diff = Mathf.DeltaAngle(angle, euler.z);
+            var speed = _weaponController.CurrentWeaponAdapter.RotationSpeed;
 
-            var direction = Mathf.Clamp(Mathf.Sign(diff) / _inaccuracy, -1, 1);
-            euler.z += direction * _weaponController.CurrentWeaponAdapter.RotationSpeed;
+            euler.z = Mathf.SmoothDampAngle(euler.z, angle, ref _velocity, Time.deltaTime, speed);
             return euler;
         }
     }

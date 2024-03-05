@@ -16,5 +16,5 @@ MonoBehaviour:
   CaptureSpeed: 0.5
   ShieldTime: 3
   ShieldDelay: 2
-  ShieldAlpha: 0.5
+  ShieldAlpha: 0.2
   ShieldBlinkDelay: 0.2

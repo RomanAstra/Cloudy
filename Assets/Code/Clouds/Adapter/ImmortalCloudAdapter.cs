@@ -1,11 +1,9 @@
 ﻿using Cloudy.Configs;
 using DG.Tweening;
-using UnityEngine;
-using Utils;
 
 namespace Cloudy.Adapter
 {
-    public sealed class ImmortalCloudAdapter : CloudAdapter, IGameFinish
+    public sealed class ImmortalCloudAdapter : CloudAdapter
     {
         private readonly ImmortalCloudHierarchy _hierarchy;
         private readonly ImmortalCloudConfig _config;
@@ -29,6 +27,9 @@ namespace Cloudy.Adapter
         {
             base.OnUpdate(deltaTime);
             
+            if(_currentHitPoints == 0)
+                return;
+            
             _shieldTime.Update();
             
             if(!_shieldTime.IsEnded)
@@ -44,16 +45,12 @@ namespace Cloudy.Adapter
             _shieldDelay.Reset();
             ShowShield();
         }
-        public void OnFinish()
-        {
-            _tween?.Kill();
-        }
 
-        protected override void Release()
+        protected override void OnDealDamage(int damage)
         {
-            base.Release();
-            
-            _tween?.Kill(true);
+            base.OnDealDamage(damage);
+            if(_currentHitPoints == 0)
+                _tween?.Kill(true);
         }
 
         private void ShowShield()
@@ -62,17 +59,18 @@ namespace Cloudy.Adapter
             var color = _hierarchy.Shield.color;
             color.a = _startShieldAlpha;
             _hierarchy.Shield.color = color;
-            
-            _hierarchy.Shield.gameObject.SetActive(true);
+
+            var shield = _hierarchy.Shield.gameObject;
+            shield.SetActive(true);
             _tween = _hierarchy.Shield.DOFade(_config.ShieldAlpha, _config.ShieldBlinkDelay).
-                SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InExpo);
-            _hierarchy.Collider.enabled = false;
+                SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InExpo).SetLink(shield);
+            _hierarchy.HitCollider.enabled = false;
         }
         private void HideShield()
         {
             _tween?.Kill(true);
             _hierarchy.Shield.gameObject.SetActive(false);
-            _hierarchy.Collider.enabled = true;
+            _hierarchy.HitCollider.enabled = true;
         }
     }
 }

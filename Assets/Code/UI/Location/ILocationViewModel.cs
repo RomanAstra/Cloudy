@@ -2,7 +2,9 @@
 {
     public interface ILocationViewModel
     {
-        public string Title { get; }
+        string Title { get; }
+        string Stars { get; }
+        string NeedStarsToOpen { get; }
 
         void ShowWeaponMenu();
     }

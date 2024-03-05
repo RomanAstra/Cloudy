@@ -2,7 +2,7 @@
 {
     public interface IWeaponUpgradeButtonModel
     {
-        public string Description { get; }
+        string Description { get; }
         
         void OnUpgradeButtonClick();
     }
