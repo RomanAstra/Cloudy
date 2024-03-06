@@ -12,6 +12,7 @@ namespace Cloudy
         public override void InstallBindings()
         {
             Container.Bind<MainMenuPresenter>().AsSingle();
+            Container.Bind<StarsProgressPresenter>().AsSingle().WithArguments(_locationsStarsConfig);
             Container.Bind<LocationsMenuPresenter>().AsSingle().WithArguments(_locationsStarsConfig);
             Container.Bind<WeaponsMenuPresenter>().AsSingle();
             Container.BindInterfacesTo<ViewManager>().AsSingle();

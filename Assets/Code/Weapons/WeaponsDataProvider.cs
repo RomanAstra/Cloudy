@@ -8,21 +8,16 @@ namespace Cloudy
     public sealed class WeaponsDataProvider
     {
         private readonly IReadOnlyList<OpenObjectStarsData> _weapons;
+        private readonly SaveSystem _saveSystem;
         private readonly List<string> _currentWeapons = new();
         private readonly Dictionary<string, OpenObjectStarsData> _openedWeapons = new();
             
         public WeaponsDataProvider(IReadOnlyList<OpenObjectStarsData> weapons, SaveSystem saveSystem)
         {
             _weapons = weapons;
-
-            var starsCount = saveSystem.SaveData.GetStarsCount();
-            for (var i = 0; i < _weapons.Count; i++)
-            {
-                var weapon = _weapons[i];
-                
-                if(weapon.StarsCount <= starsCount)
-                    _openedWeapons.Add(weapon.Id, weapon);
-            }
+            _saveSystem = saveSystem;
+            
+            _saveSystem.OnLoadData += OnLoadSave;
         }
         
         public IReadOnlyList<OpenObjectStarsData> GetWeapons()
@@ -68,6 +63,19 @@ namespace Cloudy
                 _currentWeapons.Add(weapon);
                 tempWeapons.RemoveAt(index);
             }
+        }
+        private void OnLoadSave(SaveData.SaveData saveData)
+        {
+            var starsCount = _saveSystem.SaveData.GetStarsCount();
+            for (var i = 0; i < _weapons.Count; i++)
+            {
+                var weapon = _weapons[i];
+                
+                if(weapon.StarsCount <= starsCount)
+                    _openedWeapons.Add(weapon.Id, weapon);
+            }
+            
+            _saveSystem.OnLoadData -= OnLoadSave;
         }
     }
 }

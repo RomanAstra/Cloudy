@@ -22,13 +22,10 @@ namespace Cloudy
         }
         
         [Button]
-        private void GetCloudSpawnZones()
+        private void GetCloudSpawnZonesAndCreateConfig()
         {
             _cloudSpawnZones = GetComponentsInChildren<CloudSpawnZoneHierarchy>();
-        }
-        [Button]
-        private void CreateSpawnZonesConfig()
-        {
+            
             if (_cloudSpawnZones.Length == 0)
                 return;
 

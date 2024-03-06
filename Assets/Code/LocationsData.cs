@@ -2,7 +2,8 @@
 {
     public class LocationsData
     {
-        public const int MAX_LEVEL = 5;
+        public readonly int MaxLevelCount = 5;
+        public readonly int MaxStarsCountPerLevel = 3;
 
         public string CurrentLocation;
         public int CurrentLevel = 1;
@@ -10,7 +11,7 @@
         
         private readonly (int oneStar, int twoStars, int threeStars) _starsPercent = (50, 70, 90);
         
-        public bool IsMaxLevel => CurrentLevel >= MAX_LEVEL;
+        public bool IsMaxLevel => CurrentLevel >= MaxLevelCount;
 
         public string GetCurrentLevelName()
         {

@@ -6,6 +6,7 @@ public class TrajectoryRenderer : MonoBehaviour
     
     private LineRenderer _lineRendererComponent;
     private Transform _transform;
+    private bool _isActive;
 
     private void Awake()
     {
@@ -16,6 +17,13 @@ public class TrajectoryRenderer : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.R))
+            _isActive = !_isActive;
+        
+        _lineRendererComponent.enabled = _isActive;
+        if(!_isActive)
+            return;
+        
         var points = new Vector3[_lineRendererComponent.positionCount];
 
         var direction = transform.right;

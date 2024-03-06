@@ -1,5 +1,5 @@
 {
-    "idSave": 16,
+    "idSave": 57,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -10,5 +10,15 @@
         true,
         false
     ],
-    "saveData": {}
+    "saveData": {
+        "CompletedLocations": [
+            {
+                "Id": "1",
+                "Stars": 14,
+                "Weapons": [
+                    "Pistol"
+                ]
+            }
+        ]
+    }
 }

@@ -6,7 +6,7 @@ namespace Cloudy.SaveData
     [Serializable]
     public sealed class LocationData
     {
-        public string Id { get; }
+        public string Id;
         public int Stars;
         public List<string> Weapons = new();
 

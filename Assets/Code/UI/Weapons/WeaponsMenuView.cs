@@ -90,7 +90,7 @@ namespace Code.UI
             {
                 var view = _pool.Get(Vector3.zero, Quaternion.identity, _parent);
                 _weaponViews.Add(view);
-                view.SetView(weapon);
+                view.Initialize(weapon);
             }
         }
         private void LoadScene()

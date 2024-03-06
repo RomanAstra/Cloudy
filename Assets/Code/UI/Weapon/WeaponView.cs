@@ -7,7 +7,7 @@ namespace Cloudy.UI
     {
         [SerializeField] private TextMeshProUGUI _title;
 
-        public void SetView(string weaponName)
+        public void Initialize(string weaponName)
         {
             _title.text = weaponName;
         }

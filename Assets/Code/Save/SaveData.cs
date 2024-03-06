@@ -1,32 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 namespace Cloudy.SaveData
 {
     [Serializable]
     public sealed class SaveData
     {
-        private Dictionary<string, LocationData> _completedLocations = new();
-
+        public List<LocationData> CompletedLocations = new ();
+        
         public bool TryGetLocationData(string id, out LocationData data)
         {
-            return _completedLocations.TryGetValue(id, out data);
+            for (var i = 0; i < CompletedLocations.Count; i++)
+            {
+                if (CompletedLocations[i].Id == id)
+                {
+                    data = CompletedLocations[i];
+                    return true;
+                }
+            }
+
+            data = null;
+            return false;
         }
         public LocationData GetLocationData(string id)
         {
-            if(_completedLocations.TryGetValue(id, out var locationData))
-                return locationData;
+            for (var i = 0; i < CompletedLocations.Count; i++)
+            {
+                if (CompletedLocations[i].Id == id)
+                    return CompletedLocations[i];
+            }
             
-            locationData = new LocationData(id);
-            _completedLocations.Add(id, locationData);
-
-            return locationData;
+            var data = new LocationData(id);
+            CompletedLocations.Add(data);
+            return data;
         }
         public int GetStarsCount()
         {
             var sum = 0;
             
-            foreach (var value in _completedLocations.Values)
+            foreach (var value in CompletedLocations)
             {
                 sum += value.Stars;
             }
