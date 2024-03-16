@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShotgunConfig
   m_EditorClassIdentifier: 
   FireDelay: 0.6
-  Inaccuracy: 0.25
-  RecoilPower: 10
-  RotateionSpeed: 10
+  Inaccuracy: 0.2
+  RecoilPower: 25
+  RotationSpeed: 70
   BulletsCount: 8

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PistolConfig
   m_EditorClassIdentifier: 
   FireDelay: 0.2
-  Inaccuracy: 0
+  Inaccuracy: 0.05
   RecoilPower: 10
   RotationSpeed: 100

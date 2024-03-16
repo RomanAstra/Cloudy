@@ -19,17 +19,21 @@ MonoBehaviour:
     StartSpawnDelay: 6
   - CloudName: Circle
     SizeZone: {x: 4.6, y: 1.9}
-    SpawnDelay: 19
+    SpawnDelay: 16
     StartSpawnDelay: 7
-  - CloudName: Rhomb
+  - CloudName: Immortal
     SizeZone: {x: 3, y: 2.4}
     SpawnDelay: 14
     StartSpawnDelay: 2
   - CloudName: Rhomb
     SizeZone: {x: 2.5, y: 4.1}
-    SpawnDelay: 13
+    SpawnDelay: 10
     StartSpawnDelay: 7
   - CloudName: Immortal
     SizeZone: {x: 2.6, y: 2.5}
     SpawnDelay: 21
     StartSpawnDelay: 8
+  - CloudName: Rhomb
+    SizeZone: {x: 2.5, y: 1.61}
+    SpawnDelay: 11
+    StartSpawnDelay: 7

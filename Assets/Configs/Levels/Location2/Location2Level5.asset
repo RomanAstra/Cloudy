@@ -17,10 +17,10 @@ MonoBehaviour:
     SizeZone: {x: 2.2, y: 2}
     SpawnDelay: 13
     StartSpawnDelay: 6
-  - CloudName: Immortal
-    SizeZone: {x: 3.2, y: 2.2}
-    SpawnDelay: 19
-    StartSpawnDelay: 7
+  - CloudName: ImmortalBoss
+    SizeZone: {x: 0.5, y: 0.5}
+    SpawnDelay: 700
+    StartSpawnDelay: 0
   - CloudName: Rhomb
     SizeZone: {x: 3, y: 2.4}
     SpawnDelay: 14

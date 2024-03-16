@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPoints: 20
   CaptureSpeed: 0.25
-  RegeneratingDelay: 2
+  RegeneratingDelay: 0.5
   HitPointsRegeneratingCount: 1

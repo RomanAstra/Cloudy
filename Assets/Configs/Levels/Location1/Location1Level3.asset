@@ -15,17 +15,17 @@ MonoBehaviour:
   ZonesSettings:
   - CloudName: Rhomb
     SizeZone: {x: 4, y: 2}
-    SpawnDelay: 13
-    StartSpawnDelay: 6
+    SpawnDelay: 4
+    StartSpawnDelay: 2
   - CloudName: Circle
     SizeZone: {x: 4.6, y: 3}
-    SpawnDelay: 15
-    StartSpawnDelay: 7
+    SpawnDelay: 5
+    StartSpawnDelay: 3
   - CloudName: Circle
     SizeZone: {x: 3, y: 3.5}
-    SpawnDelay: 11
-    StartSpawnDelay: 2
+    SpawnDelay: 3
+    StartSpawnDelay: 1
   - CloudName: Rhomb
     SizeZone: {x: 3.5, y: 2}
-    SpawnDelay: 9
-    StartSpawnDelay: 7
+    SpawnDelay: 3
+    StartSpawnDelay: 2

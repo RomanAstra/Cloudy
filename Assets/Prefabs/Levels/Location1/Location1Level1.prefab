@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Rhomb
   SizeZone: {x: 3.6, y: 2}
-  SpawnDelay: 3
+  SpawnDelay: 5
   StartSpawnDelay: 2
 --- !u!1 &7732990730404558954
 GameObject:
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Rhomb
   SizeZone: {x: 3.53, y: 2.08}
-  SpawnDelay: 2
+  SpawnDelay: 4
   StartSpawnDelay: 3
 --- !u!1 &7732990730770895201
 GameObject:
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Circle
   SizeZone: {x: 4.64, y: 2.97}
-  SpawnDelay: 2
+  SpawnDelay: 5
   StartSpawnDelay: 0
 --- !u!1 &7732990731106806118
 GameObject:
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Circle
   SizeZone: {x: 1, y: 3}
-  SpawnDelay: 5
+  SpawnDelay: 6
   StartSpawnDelay: 0
 --- !u!1 &7732990731150125677
 GameObject:

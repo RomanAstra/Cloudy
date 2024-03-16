@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Rhomb
   SizeZone: {x: 3.5, y: 2}
-  SpawnDelay: 2
+  SpawnDelay: 3
   StartSpawnDelay: 2
 --- !u!1 &7732990730770895201
 GameObject:

@@ -261,8 +261,16 @@ MonoBehaviour:
     m_Address: Location3Level1
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 5ac01ad39ed82074a8e6ff5ec189a7af
+  - m_GUID: 9a5bbd7ff1019fe4ea09f626600a8c1d
+    m_Address: ImmortalBossCloudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7545f138c69370f48908bda0b1283032
     m_Address: Location1Level3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 17131a0fb75bc7f4ea4d8b7226788154
+    m_Address: ImmortalBoss
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

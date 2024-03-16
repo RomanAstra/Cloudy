@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cloudSpawnZones:
   - {fileID: 5728857868240664303}
+  - {fileID: 7657123750928087506}
   - {fileID: 4567183455470335210}
   - {fileID: 7631110096993081908}
 --- !u!1 &7732990730131703908
@@ -290,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Circle
   SizeZone: {x: 4.64, y: 2.97}
-  SpawnDelay: 3
+  SpawnDelay: 6
   StartSpawnDelay: 0
 --- !u!1 &7732990731106806118
 GameObject:

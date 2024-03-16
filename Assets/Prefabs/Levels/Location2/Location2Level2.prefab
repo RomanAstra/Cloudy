@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Rhomb
   SizeZone: {x: 3, y: 2.4}
-  SpawnDelay: 14
+  SpawnDelay: 10
   StartSpawnDelay: 2
 --- !u!1 &7283481886005729173
 GameObject:
@@ -126,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7283481886005729173}
   m_LocalRotation: {x: -0, y: -0, z: 0.0025722564, w: 0.9999967}
-  m_LocalPosition: {x: 7.78, y: 2.509, z: 3.5699577}
+  m_LocalPosition: {x: 7.78, y: 2.83, z: 3.5699577}
   m_LocalScale: {x: 5.57, y: 0.901065, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Circle
   SizeZone: {x: 4, y: 2}
-  SpawnDelay: 13
+  SpawnDelay: 11
   StartSpawnDelay: 6
 --- !u!1 &7283481886415589920
 GameObject:
@@ -468,7 +468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7283481886466323409}
   m_LocalRotation: {x: -0, y: -0, z: 0.9288808, w: 0.37037876}
-  m_LocalPosition: {x: 10.17, y: 2.56, z: 3.5699577}
+  m_LocalPosition: {x: 10.17, y: 2.27, z: 3.5699577}
   m_LocalScale: {x: 1.8147925, y: 1.6804993, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -955,8 +955,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Circle
   SizeZone: {x: 2.6, y: 3.4}
-  SpawnDelay: 21
-  StartSpawnDelay: 8
+  SpawnDelay: 8
+  StartSpawnDelay: 4
 --- !u!1 &7283481887424415122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,8 +1003,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Immortal
   SizeZone: {x: 2.5, y: 4}
-  SpawnDelay: 13
-  StartSpawnDelay: 7
+  SpawnDelay: 10
+  StartSpawnDelay: 0
 --- !u!1 &7283481887697710233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,7 +1030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7283481887697710233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.36, y: -2.52, z: 0}
+  m_LocalPosition: {x: 3.36, y: -3.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1050,8 +1050,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloudName: Immortal
-  SizeZone: {x: 4.6, y: 3}
-  SpawnDelay: 19
+  SizeZone: {x: 4.6, y: 2.32}
+  SpawnDelay: 8
   StartSpawnDelay: 7
 --- !u!1 &8621396611809289392
 GameObject:

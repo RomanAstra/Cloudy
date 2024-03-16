@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &485932771745322801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740851897768817990}
+  - component: {fileID: 4642831448544694777}
+  m_Layer: 0
+  m_Name: Zone (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &740851897768817990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485932771745322801}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.03, y: 1.23, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7283481886545030385}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4642831448544694777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485932771745322801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a52997bd28d42ca99dbb16c2f1b6f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CloudName: Rhomb
+  SizeZone: {x: 2.5, y: 1.61}
+  SpawnDelay: 11
+  StartSpawnDelay: 7
 --- !u!1 &2297851782042052569
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,6 +100,7 @@ MonoBehaviour:
   - {fileID: 4371107153430897194}
   - {fileID: 8133292233565596804}
   - {fileID: 3645419677501947435}
+  - {fileID: 4642831448544694777}
 --- !u!1 &7283481885912077470
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,9 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a52997bd28d42ca99dbb16c2f1b6f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CloudName: Rhomb
+  CloudName: Immortal
   SizeZone: {x: 3, y: 2.4}
-  SpawnDelay: 14
+  SpawnDelay: 12
   StartSpawnDelay: 2
 --- !u!1 &7283481886005729173
 GameObject:
@@ -671,6 +720,7 @@ Transform:
   - {fileID: 7283481885912077471}
   - {fileID: 7283481887424415123}
   - {fileID: 7283481887236450044}
+  - {fileID: 740851897768817990}
   m_Father: {fileID: 3681682177476410124}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -955,7 +1005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Immortal
   SizeZone: {x: 2.6, y: 2.5}
-  SpawnDelay: 21
+  SpawnDelay: 16
   StartSpawnDelay: 8
 --- !u!1 &7283481887424415122
 GameObject:
@@ -1003,7 +1053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Rhomb
   SizeZone: {x: 2.5, y: 4.1}
-  SpawnDelay: 13
+  SpawnDelay: 10
   StartSpawnDelay: 7
 --- !u!1 &7283481887697710233
 GameObject:
@@ -1051,8 +1101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Circle
   SizeZone: {x: 4.6, y: 1.9}
-  SpawnDelay: 19
-  StartSpawnDelay: 7
+  SpawnDelay: 12
+  StartSpawnDelay: 3
 --- !u!1 &8621396611809289392
 GameObject:
   m_ObjectHideFlags: 0

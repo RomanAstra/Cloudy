@@ -490,7 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Rhomb
   SizeZone: {x: 2, y: 1}
-  SpawnDelay: 19
+  SpawnDelay: 14
   StartSpawnDelay: 3
 --- !u!1 &7283481886005729173
 GameObject:
@@ -1351,7 +1351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Immortal
   SizeZone: {x: 2, y: 2}
-  SpawnDelay: 16
+  SpawnDelay: 8
   StartSpawnDelay: 4
 --- !u!1 &7283481887424415122
 GameObject:
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudName: Immortal
   SizeZone: {x: 5, y: 2}
-  SpawnDelay: 17
+  SpawnDelay: 13
   StartSpawnDelay: 4
 --- !u!1 &8621396611809289392
 GameObject:

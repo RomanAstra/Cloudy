@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21b51eb47527490ebb929a93ffd4cbd1, type: 3}
-  m_Name: SniperRifleConfig
+  m_Script: {fileID: 11500000, guid: bf85f5c3178b496da2ee76ed9567be33, type: 3}
+  m_Name: ImmortalBossCloudConfig
   m_EditorClassIdentifier: 
-  FireDelay: 0.8
-  Inaccuracy: 0
-  RecoilPower: 50
-  RotationSpeed: 80
+  HitPoints: 100
+  CaptureSpeed: 0.4
+  ShieldTime: 3
+  ShieldDelay: 2
+  ShieldAlpha: 0.4
+  ShieldBlinkDelay: 0.2
