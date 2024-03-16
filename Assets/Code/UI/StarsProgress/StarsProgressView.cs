@@ -1,3 +1,4 @@
+using Cloudy;
 using Cloudy.UI;
 using TMPro;
 using Ui;
@@ -24,18 +25,10 @@ namespace Code.UI
             _currentStarsCountText.text = viewModel.CurrentStarsCount;
             _allStarsCountText.text = viewModel.AllStarsCount.ToString();
 
+            var width =  _progressImage.rectTransform.rect.width;
             for (var i = 0; i < viewModel.Weapons.Count; i++)
             {
-                var weapon = viewModel.Weapons[i];
-                var view = Instantiate(_weaponViewPrefab, _progressImage.transform);
-                view.Initialize(weapon.Id);
-                
-                //todo уточнить или создать новый префаб 
-                //view.GetComponent<RectTransform>().sizeDelta = new Vector2(75, 75);
-                view.transform.localScale = Vector2.one * 0.25f;
-                
-                var x = weapon.StarsCount / (float)viewModel.AllStarsCount * _progressImage.rectTransform.rect.width;
-                view.transform.localPosition = new Vector2(x, 100);
+                InitializeWeaponView(viewModel.Weapons[i], viewModel.AllStarsCount, width);
             }
         }
         
@@ -54,6 +47,20 @@ namespace Code.UI
         public void Focus()
         {
             Show();
+        }
+
+        private void InitializeWeaponView(OpenObjectStarsData weaponData, float allStarsCount, float width)
+        {
+            var view = Instantiate(_weaponViewPrefab, _progressImage.transform);
+            view.Initialize(weaponData.Id);
+                
+            //todo уточнить или создать новый префаб 
+            //view.GetComponent<RectTransform>().sizeDelta = new Vector2(75, 75);
+            var viewTransform = view.transform;
+            viewTransform.localScale = Vector2.one * 0.25f;
+                
+            var x = weaponData.StarsCount / allStarsCount * width;
+            viewTransform.localPosition = new Vector2(x, 100);
         }
     }
 }

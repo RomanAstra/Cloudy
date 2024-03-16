@@ -39,6 +39,7 @@ namespace Cloudy.Pools
                         parent, beatOffCloudHierarchy, _gameManager, beatOffConfig, _audioSource, _particleSystem);
                     break;
                 case "Immortal":
+                case "ImmortalBoss":
                     var immortalHierarchy = await _cloudSpawner.LoadAsync<ImmortalCloudHierarchy>(id);
                     var immortalConfig = await _cloudConfigLoader.LoadAsync<ImmortalCloudConfig>(id);
                     pool = new ImmortalCloudPool(
