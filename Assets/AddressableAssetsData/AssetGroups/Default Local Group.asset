@@ -265,12 +265,20 @@ MonoBehaviour:
     m_Address: ImmortalBossCloudConfig
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 7545f138c69370f48908bda0b1283032
+  - m_GUID: 17131a0fb75bc7f4ea4d8b7226788154
+    m_Address: ImmortalBoss
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5ac01ad39ed82074a8e6ff5ec189a7af
     m_Address: Location1Level3
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 17131a0fb75bc7f4ea4d8b7226788154
-    m_Address: ImmortalBoss
+  - m_GUID: f1ffb9d58be5ba34e84475e33d1511ad
+    m_Address: SmokeCloudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 11cb0b054596ceb4393ca3f7bdcbc709
+    m_Address: Smoke
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

@@ -52,7 +52,7 @@ namespace Code.UI
         private void InitializeWeaponView(OpenObjectStarsData weaponData, float allStarsCount, float width)
         {
             var view = Instantiate(_weaponViewPrefab, _progressImage.transform);
-            view.Initialize(weaponData.Id);
+            view.Initialize(new WeaponViewModel(weaponData.Id, true));
                 
             //todo уточнить или создать новый префаб 
             //view.GetComponent<RectTransform>().sizeDelta = new Vector2(75, 75);

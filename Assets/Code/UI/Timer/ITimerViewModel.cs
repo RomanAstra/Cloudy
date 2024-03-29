@@ -1,10 +1,10 @@
 ﻿using Cloudy;
+using Ui;
 
 namespace Code.UI
 {
-    public interface ITimerModel
+    public interface ITimerViewModel : IViewModel
     {
         Countdown Timer { get; }
-        void SetReward();
     }
 }

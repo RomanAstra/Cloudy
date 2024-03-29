@@ -1,19 +1,17 @@
-﻿using Code.UI;
+﻿using Code;
 using Zenject;
 
 namespace Cloudy
 {
     public sealed class GameInstaller
     {
-        public void Binding(DiContainer container, TimerView timer, float roundTime, PlayerHierarchy player, 
-            CloudZoneDetectorController detectorController)
+        public void Binding(DiContainer container, PlayerHierarchy player, 
+            CloudZoneDetectorController detectorController, int allEnemiesDamage)
         {
-            timer.Initialize(new TimerModel(roundTime));
-            container.BindInterfacesAndSelfTo<TimerView>().FromInstance(timer).AsSingle();
-            
             container.BindInstance(player).AsSingle();
             container.BindInterfacesTo<PlayerAdapter>().AsSingle();
             container.BindInterfacesTo<InputSystemManager>().AsCached().NonLazy();
+            container.Bind<AllEnemiesDamageSystem>().AsSingle().WithArguments(allEnemiesDamage);
 
             container.BindInstance(detectorController).AsSingle();
         }

@@ -26,7 +26,7 @@ namespace Code.UI
         }
         
 
-        public override void Show()
+        public void Show()
         {
             var model = new StarsProgressViewModel(_locationsData, _openObjectStarsConfig,
                 _weaponsDataProvider, _saveSystem);

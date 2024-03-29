@@ -17,7 +17,6 @@ namespace Code.UI
         [SerializeField] private Button _adsButton;
 
         private IEndGameViewModel _viewModel;
-        private bool _isFirstRewardVideo = true;
 
         public IViewModel ViewModel => _viewModel;
 
@@ -52,7 +51,7 @@ namespace Code.UI
             _levelProgressView.Initialize(_viewModel.ProgressLevelModel);
             
             _continueButton.gameObject.SetActive(_viewModel.CanContinue);
-            _adsButton.gameObject.SetActive(_viewModel.CanShowAds && _isFirstRewardVideo);
+            _adsButton.gameObject.SetActive(_viewModel.CanShowAds);
         }
         public void Hide()
         {
@@ -81,15 +80,8 @@ namespace Code.UI
         }
         private void ShowAds()
         {
-            _isFirstRewardVideo = false;
-            YandexGame.CloseVideoEvent += ResumeGame;
-            _viewModel.ShowAds();
-        }
-        private void ResumeGame()
-        {
-            YandexGame.CloseVideoEvent -= ResumeGame;
-            _viewModel.GameResume();
             Hide();
+            _viewModel.ShowAds();
         }
     }
 }

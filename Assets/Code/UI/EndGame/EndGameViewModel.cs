@@ -19,6 +19,7 @@ namespace Code.UI
         private readonly WeaponsDataProvider _weaponsDataProvider;
         private readonly SaveSystem _saveSystem;
         private readonly LocationsData _locationsData;
+        private bool _isFirstRewardVideo = true;
 
         private int _starsCount;
         
@@ -63,7 +64,7 @@ namespace Code.UI
             ProgressLevelModel = new LevelProgressModel(percent);
 
             CanContinue = isWin && !_locationsData.IsMaxLevel;
-            CanShowAds = percent is > 0 and < 90;
+            CanShowAds = _isFirstRewardVideo && percent is > 0 and < 90;
             
             _gameManager.SetState(GameState.PAUSED);
         }
@@ -84,8 +85,8 @@ namespace Code.UI
         public void ExitGame()
         {
             _locationsData.CurrentLevel = 1;
-            YandexGame.FullscreenShow();
             ResetUpgrades();
+            YandexGame.FullscreenShow();
             SceneManager.LoadScene("Menu");
         }
         public void Close()
@@ -94,12 +95,9 @@ namespace Code.UI
         }
         public void ShowAds()
         {
+            _isFirstRewardVideo = false;
             _locationsData.CurrentStars -= _starsCount;
             YandexGame.RewVideoShow(0);
-        }
-        public void GameResume()
-        {
-            _gameManager.SetState(GameState.PLAYING);
         }
         
         private void ResetUpgrades()
@@ -115,35 +113,44 @@ namespace Code.UI
             var currentWeapons = _weaponsDataProvider.GetCurrentWeapons(); 
             
             var needSave = false;
-            for (var i = 0; i < currentWeapons.Count; i++)
-            {
-                var weapon = currentWeapons[i];
-                if (!location.Weapons.Contains(weapon))
-                {
-                    needSave = true;
-                    location.Weapons.Add(weapon);
-                }
-            }
-
-            if (location.Stars < _locationsData.CurrentStars)
-            {
-                location.Stars = _locationsData.CurrentStars;
-
-                var starsCount = _saveSystem.SaveData.GetStarsCount();
-                var weapons = _weaponsDataProvider.GetWeapons();
-                
-                for (var i = 0; i < weapons.Count; i++)
-                {
-                    var weapon = weapons[i];
-
-                    if (weapon.StarsCount <= starsCount && !_weaponsDataProvider.CheckOpenedWeapons(weapon.Id))
-                        _weaponsDataProvider.AddOpenWeapon(weapon);
-                }
-                needSave = true;
-            }
+            
+            AddWeaponCompleted();
+            SetStarsAndNewWeapons();
             
             if(needSave)
                 _saveSystem.Save();
+
+            void AddWeaponCompleted()
+            {
+                for (var i = 0; i < currentWeapons.Count; i++)
+                {
+                    var weapon = currentWeapons[i];
+                    if (!location.Weapons.Contains(weapon))
+                    {
+                        needSave = true;
+                        location.Weapons.Add(weapon);
+                    }
+                }
+            }
+            void SetStarsAndNewWeapons()
+            {
+                if (location.Stars < _locationsData.CurrentStars)
+                {
+                    location.Stars = _locationsData.CurrentStars;
+
+                    var starsCount = _saveSystem.SaveData.GetStarsCount();
+                    var weapons = _weaponsDataProvider.GetWeapons();
+                
+                    for (var i = 0; i < weapons.Count; i++)
+                    {
+                        var weapon = weapons[i];
+
+                        if (weapon.StarsCount <= starsCount && !_weaponsDataProvider.CheckOpenedWeapons(weapon.Id))
+                            _weaponsDataProvider.AddOpenWeapon(weapon);
+                    }
+                    needSave = true;
+                }
+            }
         }
     }
 }

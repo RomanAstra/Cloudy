@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloudName: Rhomb
+  CloudType: 
   SizeZone: {x: 3.6, y: 2}
   SpawnDelay: 5
   StartSpawnDelay: 2
@@ -242,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloudName: Rhomb
+  CloudType: 
   SizeZone: {x: 3.53, y: 2.08}
   SpawnDelay: 4
   StartSpawnDelay: 3
@@ -290,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloudName: Circle
+  CloudType: 
   SizeZone: {x: 4.64, y: 2.97}
   SpawnDelay: 5
   StartSpawnDelay: 0
@@ -337,7 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a52997bd28d42ca99dbb16c2f1b6f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CloudName: Circle
+  CloudName: Smoke
+  CloudType: 
   SizeZone: {x: 1, y: 3}
   SpawnDelay: 6
   StartSpawnDelay: 0
@@ -582,6 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloudName: BeatOff
+  CloudType: 
   SizeZone: {x: 0, y: 0}
   SpawnDelay: 5
   StartSpawnDelay: 0

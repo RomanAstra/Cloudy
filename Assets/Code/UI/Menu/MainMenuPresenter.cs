@@ -13,7 +13,7 @@ namespace Code.UI
             _locationsMenuPresenter = locationsMenuPresenter;
         }
 
-        public override void Show()
+        public void Show()
         {
             var mainMenuViewModel = new MainMenuViewModel(_locationsMenuPresenter);
             _viewManager.ShowWindow(mainMenuViewModel);

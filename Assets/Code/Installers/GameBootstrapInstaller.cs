@@ -9,7 +9,6 @@ namespace Cloudy
     public sealed class GameBootstrapInstaller : MonoInstaller
     {
         [SerializeField] private GameManager _gameManager;
-        [SerializeField] private TimerView _timer;
         [SerializeField] private PlayerHierarchy _player;
         [SerializeField] private CloudZoneDetectorController _detectorController;
         [SerializeField] private Transform _bulletsPurent;
@@ -18,6 +17,7 @@ namespace Cloudy
         [SerializeField] private ParticleSystem _explosionParticles;
         [SerializeField] private float _roundTime = 60f;
         [SerializeField] private int _weaponsUpgradesCount = 3;
+        [SerializeField] private int _allEnemiesDamage = 5;
 
         public override void InstallBindings()
         {
@@ -29,10 +29,10 @@ namespace Cloudy
             Container.BindInstance(_gameManager).AsSingle();
             
             var gameInstaller = new GameInstaller();
-            gameInstaller.Binding(Container, _timer, _roundTime, _player, _detectorController);
+            gameInstaller.Binding(Container, _player, _detectorController, _allEnemiesDamage);
             
             var gameUIInstaller = new GameUIInstaller();
-            gameUIInstaller.Binding(Container, _weaponsUpgradesCount);
+            gameUIInstaller.Binding(Container, _weaponsUpgradesCount, _roundTime);
             
             var weaponInstaller = new WeaponsInstaller();
             weaponInstaller.Binding(Container, _player.WeaponContainer, _weaponAudioSource);
@@ -50,10 +50,6 @@ namespace Cloudy
 
             Container.Bind<StartGamePresenter>().AsSingle();
             Container.Resolve<StartGamePresenter>().Show();
-            
-            // await UniTask.Delay(1000);
-            //
-            // _gameManager.SetState(GameState.PLAYING);
         }
     }
 }

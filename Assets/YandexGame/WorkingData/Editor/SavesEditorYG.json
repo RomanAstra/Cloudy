@@ -1,5 +1,5 @@
 {
-    "idSave": 63,
+    "idSave": 68,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -16,8 +16,7 @@
                 "Id": "1",
                 "Stars": 15,
                 "Weapons": [
-                    "Pistol",
-                    "Shotgun"
+                    "Pistol"
                 ]
             },
             {
@@ -25,8 +24,7 @@
                 "Stars": 13,
                 "Weapons": [
                     "Pistol",
-                    "Shotgun",
-                    "SniperRifle"
+                    "Shotgun"
                 ]
             }
         ]

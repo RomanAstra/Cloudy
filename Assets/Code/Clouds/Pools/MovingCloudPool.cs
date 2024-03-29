@@ -1,5 +1,7 @@
-﻿using Cloudy.Adapter;
+﻿using System.Collections.Generic;
+using Cloudy.Adapter;
 using Cloudy.Configs;
+using Code;
 using UnityEngine;
 using Utils;
 
@@ -11,17 +13,20 @@ namespace Cloudy.Pools
         private readonly GameManager _gameManager;
         private readonly MovingCloudConfig _config;
         private readonly AudioSource _audioSource;
-        private readonly ParticleSystem _particleSystem;
+        private readonly ParticlePool _particlePool;
         private readonly Pool<MovingCloudHierarchy> _hierarchyPool;
+        private readonly List<CloudHierarchy> _clouds = new();
+        
+        public IReadOnlyList<CloudHierarchy> Clouds => _clouds;
 
         public MovingCloudPool(Transform parent, MovingCloudHierarchy cloudPrefab, GameManager gameManager,
-            MovingCloudConfig config, AudioSource audioSource, ParticleSystem particleSystem)
+            MovingCloudConfig config, AudioSource audioSource, ParticlePool particlePool)
         {
             _parent = parent;
             _gameManager = gameManager;
             _config = config;
             _audioSource = audioSource;
-            _particleSystem = particleSystem;
+            _particlePool = particlePool;
             _hierarchyPool = new Pool<MovingCloudHierarchy>(cloudPrefab);
         }
         
@@ -31,16 +36,17 @@ namespace Cloudy.Pools
             var adapter = new MovingCloudAdapter(hierarchy, _config);
             adapter.OnRelease += OnRelease;
             _gameManager.Add(adapter);
+            _clouds.Add(hierarchy);
         }
         
         private void OnRelease(CloudAdapter adapter, CloudHierarchy hierarchy)
         {
             _hierarchyPool.Release((MovingCloudHierarchy)hierarchy);
             _gameManager.Remove(adapter);
+            _clouds.Remove(hierarchy);
             adapter.OnRelease -= OnRelease;
             
-            _particleSystem.transform.position = hierarchy.transform.position;
-            _particleSystem.Play();
+            _particlePool.Spawn(hierarchy.transform.position, _config.ExplosionRatio).Forget();
             _audioSource.PlayOneShot(hierarchy.ExplosionAudioClip);
         }
     }

@@ -23,7 +23,7 @@ namespace Code.UI
             _weaponUpgradeSystem = weaponUpgradeSystem;
         }
 
-        public override void Show()
+        public void Show()
         {
             var model = new WeaponsUpgradesViewModel(_upgradesCount, _dataWeaponsProvider, _weaponUpgradeProvider, 
                 _weaponUpgradeSystem);

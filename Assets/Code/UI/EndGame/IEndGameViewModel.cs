@@ -14,6 +14,5 @@ namespace Code.UI
         void RestartGame();
         void ExitGame();
         void ShowAds();
-        void GameResume();
     }
 }

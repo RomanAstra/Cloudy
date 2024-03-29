@@ -11,7 +11,5 @@ namespace Code.UI
             var view = Object.FindFirstObjectByType<TView>(FindObjectsInactive.Include);
             viewManager.Register(view);
         }
-
-        public abstract void Show();
     }
 }

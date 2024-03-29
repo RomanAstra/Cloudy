@@ -34,7 +34,11 @@ namespace Cloudy
             for (var i = 0; i < _cloudSpawnZoneAdapters.Length; i++)
             {
                 var zone = _cloudSpawnZones[i];
-                var pool = await _cloudPoolFactory.GetCloudPool(zone.CloudName, zone.transform);
+
+                if (string.IsNullOrEmpty(zone.CloudType))
+                    zone.CloudType = zone.CloudName;
+                
+                var pool = await _cloudPoolFactory.GetCloudPool(zone.CloudName, zone.CloudType, zone.transform);
                 var settings = config.ZonesSettings[i];
                 var adapter = new CloudSpawnZoneAdapter(zone, pool, settings);
                 _cloudSpawnZoneAdapters[i] = adapter;

@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloudName: Rhomb
+  CloudType: 
   SizeZone: {x: 3, y: 2.4}
   SpawnDelay: 14
   StartSpawnDelay: 2
@@ -341,6 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloudName: Circle
+  CloudType: 
   SizeZone: {x: 2.2, y: 2}
   SpawnDelay: 13
   StartSpawnDelay: 6
@@ -954,6 +956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloudName: Circle
+  CloudType: 
   SizeZone: {x: 2.6, y: 2.3}
   SpawnDelay: 21
   StartSpawnDelay: 8
@@ -1002,6 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloudName: Rhomb
+  CloudType: 
   SizeZone: {x: 2.5, y: 2.5}
   SpawnDelay: 13
   StartSpawnDelay: 7
@@ -1050,6 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloudName: ImmortalBoss
+  CloudType: Immortal
   SizeZone: {x: 0.5, y: 0.5}
   SpawnDelay: 700
   StartSpawnDelay: 0

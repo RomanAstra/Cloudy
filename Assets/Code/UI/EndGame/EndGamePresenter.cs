@@ -10,14 +10,7 @@ namespace Code.UI
     public sealed class EndGamePresenter : BasePresenter<EndGameView, EndGameViewModel>
     {
         private readonly IViewManager _viewManager;
-        private readonly GameManager _gameManager;
-        private readonly WeaponsUpgradesPresenter _weaponsUpgradesPresenter;
-        private readonly WeaponUpgradeSystem _weaponUpgradeSystem;
-        private readonly WeaponUpgradeProvider _weaponUpgradeProvider;
-        private readonly CloudZoneDetectorController _detectorController;
-        private readonly WeaponsDataProvider _weaponsDataProvider;
-        private readonly SaveSystem _saveSystem;
-        private readonly LocationsData _locationsData;
+        private readonly EndGameViewModel _model;
 
         public EndGamePresenter(IViewManager viewManager, GameManager gameManager, 
             WeaponsUpgradesPresenter weaponsUpgradesPresenter, WeaponUpgradeSystem weaponUpgradeSystem, 
@@ -26,23 +19,15 @@ namespace Code.UI
             LocationsData locationsData) : base(viewManager)
         {
             _viewManager = viewManager;
-            _gameManager = gameManager;
-            _weaponsUpgradesPresenter = weaponsUpgradesPresenter;
-            _weaponUpgradeSystem = weaponUpgradeSystem;
-            _weaponUpgradeProvider = weaponUpgradeProvider;
-            _detectorController = detectorController;
-            _weaponsDataProvider = weaponsDataProvider;
-            _saveSystem = saveSystem;
-            _locationsData = locationsData;
+            
+            _model = new EndGameViewModel(gameManager, weaponsUpgradesPresenter, weaponUpgradeSystem,
+                weaponUpgradeProvider, detectorController, weaponsDataProvider, saveSystem, 
+                locationsData);
         }
         
-        public override void Show()
+        public void Show()
         {
-            var model = new EndGameViewModel(_gameManager, _weaponsUpgradesPresenter, _weaponUpgradeSystem,
-                _weaponUpgradeProvider, _detectorController, _weaponsDataProvider, _saveSystem, 
-                _locationsData);
-            
-            _viewManager.ShowWindow(model);
+            _viewManager.ShowWindow(_model);
         }
     }
 }

@@ -7,5 +7,6 @@ namespace Cloudy.Configs
     {
         public int HitPoints = 20;
         public float CaptureSpeed = 0.25f;
+        public float ExplosionRatio = 1f;
     }
 }

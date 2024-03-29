@@ -1,53 +1,51 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
+using Ui;
 using UnityEngine;
-using Utils;
-using YG;
 
 namespace Code.UI
 {
-    public sealed class TimerView : MonoBehaviour, IUpdate
+    public sealed class TimerView : MonoBehaviour, IView<ITimerViewModel>
     {
         [SerializeField] private TextMeshProUGUI _timerText;
         
-        private ITimerModel _viewModel;
-
-        public event Action TimeOver;
+        private ITimerViewModel _viewModel;
         
-        public void Initialize(ITimerModel viewModel)
+        public IViewModel ViewModel => _viewModel;
+        
+        public void Initialize(ITimerViewModel viewModel)
         {
             _viewModel = viewModel;
-            YandexGame.RewardVideoEvent += Rewarded;
             SetTime();
         }
 
-        private void OnDestroy()
+        private void LateUpdate()
         {
-            YandexGame.RewardVideoEvent -= Rewarded;
-        }
-
-        public void OnUpdate(float deltaTime)
-        {
-            if(_viewModel.Timer.IsEnded)
-                return;
-            
-            _viewModel.Timer.Update();
-
             SetTime();
-            
-            if(!_viewModel.Timer.IsEnded)
-                return;
-            
-            TimeOver?.Invoke();
         }
 
         private void SetTime()
         {
+            if (_viewModel == null) 
+                return;
+            
             _timerText.text = _viewModel.Timer.CurrentTime.ToString("00");
         }
-        private void Rewarded(int id)
+        
+        public void Show()
         {
-            _viewModel.SetReward();
+            gameObject.SetActive(true);
+        }
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+        public void Unfocus()
+        {
+            
+        }
+        public void Focus()
+        {
+            Show();
         }
     }
 }

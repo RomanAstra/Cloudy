@@ -23,8 +23,7 @@ namespace Code.UI
             _saveSystem = saveSystem;
         }
         
-
-        public override void Show()
+        public void Show()
         {
             var locationsMenuViewModel = new LocationsMenuViewModel(_weaponsMenuPresenter, _locationsData, 
                 _openObjectStarsConfig, _saveSystem);

@@ -3,10 +3,10 @@ using UnityEngine;
 public class TrajectoryRenderer : MonoBehaviour
 {
     [SerializeField] private LayerMask _layerMask;
-    
+    [SerializeField] private bool _isActive;
+
     private LineRenderer _lineRendererComponent;
     private Transform _transform;
-    private bool _isActive;
 
     private void Awake()
     {
@@ -17,8 +17,10 @@ public class TrajectoryRenderer : MonoBehaviour
 
     private void Update()
     {
+#if UNITY_EDITOR
         if(Input.GetKeyDown(KeyCode.R))
             _isActive = !_isActive;
+#endif
         
         _lineRendererComponent.enabled = _isActive;
         if(!_isActive)

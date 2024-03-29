@@ -5,6 +5,7 @@ namespace Cloudy
     public sealed class CloudSpawnZoneHierarchy : MonoBehaviour
     {
         public string CloudName;
+        public string CloudType;
         public Vector2 SizeZone;
         public float SpawnDelay = 5f;
         public float StartSpawnDelay;

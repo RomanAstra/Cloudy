@@ -1,4 +1,5 @@
 ﻿using Cloudy.Pools;
+using Code;
 using UnityEngine;
 using Zenject;
 
@@ -8,7 +9,8 @@ namespace Cloudy
     {
         public void Binding(DiContainer container, AudioSource audioSource, ParticleSystem particleSystem)
         {
-            container.Bind<CloudPoolFactory>().AsSingle().WithArguments(audioSource, particleSystem);
+            container.BindInterfacesAndSelfTo<ParticlePool>().AsSingle().WithArguments(particleSystem);;
+            container.Bind<CloudPoolFactory>().AsSingle().WithArguments(audioSource);
         }
     }
 }
